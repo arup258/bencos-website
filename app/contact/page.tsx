@@ -27,27 +27,37 @@ const contactInfo = [
 
 const offices = [
   {
-    name: "Head Office: Thane, Maharashtra",
+    label: "Head Office",
+    name: "Thane, Maharashtra, India",
     address:
       "ZENIA BUILDING, 4th Floor, Hiranandani Business Park, Arcadia Cir, Hiranandani Estate, Thane West, Maharashtra 400607",
   },
   {
-    name: "Bencos Europe, Germany",
-    address: "Regus Landsberger Strasse, Munichen, 302827, Germany",
-  },
-  {
-    name: "Bencos, Kolkata",
+    label: "Corporate Office",
+    name: "Kolkata, West Bengal, India",
     address: "AWFIS Technopolis, 11th Floor, BP Block, Sector V, Bidhannagar, Kolkata, West Bengal 700091",
   },
   {
-    name: "Bencos, Chennai",
+    label: "Branch Office",
+    name: "Chennai, Tamil Nadu, India",
     address:
       "AWFIS OMR 273A, Rajiv Gandhi Salai, Nehru Nagar, Perungudi, Padur, Chennai, Tamil Nadu 603103",
   },
   {
-    name: "Bencos, Guwahati",
+    label: "Branch Office",
+    name: "Guwahati, Assam, India",
     address:
       "Office Tribe Coworking Space, Shreeji Tower, GS Rd, Kaligaon, Christian Basti, Guwahati, Assam 781005",
+  },
+  {
+    label: "Europe",
+    name: "Munich, Germany",
+    address: "Regus Landsberger Strasse, Munichen, 302827, Germany",
+  },
+  {
+    label: "USA",
+    name: "Tangenesis Inc.",
+    address: "101. W. Eagle Rd., Ste. 111, Havertown, PA 19083",
   },
 ]
 
@@ -214,12 +224,17 @@ export default function ContactPage() {
 
               <div className="mt-8 h-px w-full max-w-xs bg-border" />
 
-              <p className="mt-6 text-sm font-semibold text-foreground">Office Address</p>
+              <p className="mt-6 text-sm font-semibold text-foreground">
+                Office Address &amp; Regional Partners
+              </p>
 
               <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
                 {offices.map((office) => (
                   <div key={office.name}>
-                    <h3 className="text-base font-semibold text-foreground">{office.name}</h3>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+                      {office.label}
+                    </p>
+                    <h3 className="mt-1 text-base font-semibold text-foreground">{office.name}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                       {office.address}
                     </p>

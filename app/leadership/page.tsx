@@ -79,14 +79,13 @@ const team: TeamMember[] = [
 
 // "Diverse and skilled team" carousel — add people here (photo, name, role, expertise).
 // `position` sets which part of the photo stays in frame (CSS object-position); default keeps the face near the top.
-// `bio` is their designation/affiliation; `linkedin` is optional (the "in" badge only shows when set).
+// `linkedin` is optional — the green "in" badge next to the name only shows when it is set.
 type TeamStory = {
   name: string
-  bio: string
-  linkedin: string
   role: "Collaborator" | "Advisor"
   expertise: string
   image: string
+  linkedin?: string
   position?: string
 }
 
@@ -94,7 +93,6 @@ const teamStories: TeamStory[] = [
   // Collaborators
   {
     name: "Raghunath Chatterjee",
-    bio: "Professor, Human Genetics Unit, Indian Statistical Institute",
     linkedin: "https://www.linkedin.com/in/raghunath-chatterjee-3a74b422/",
     role: "Collaborator",
     expertise: "Multi-omics and oral cancer research",
@@ -103,7 +101,6 @@ const teamStories: TeamStory[] = [
   },
   {
     name: "Pankaj Barah",
-    bio: "Assistant Professor & Former Ramalingaswami Fellow, Tezpur University (Central)",
     linkedin: "https://www.linkedin.com/in/pankaj-barah-2a71025/",
     role: "Collaborator",
     expertise: "Bioinformatics, machine learning and predictive modelling using long-read NGS in cancers such as gall bladder cancer",
@@ -112,8 +109,6 @@ const teamStories: TeamStory[] = [
   },
   {
     name: "Tej Sowpati",
-    bio: "Scientist, Centre for Cellular and Molecular Biology",
-    linkedin: "",
     role: "Collaborator",
     expertise: "Bioinformatics, DNA methylation and epigenetics using AI, machine learning and long-read NGS, focused on breast cancer",
     image: "/images/Tej sowpati.jpeg",
@@ -121,7 +116,6 @@ const teamStories: TeamStory[] = [
   },
   {
     name: "Sabarinathan Radhakrishnan",
-    bio: "Associate Professor, National Centre for Biological Sciences",
     linkedin: "https://www.linkedin.com/in/sabarinathan-radhakrishnan-7a46294b/",
     role: "Collaborator",
     expertise: "Computational and functional cancer genomics, variant interpretation and cataloguing across international cancer projects",
@@ -129,7 +123,6 @@ const teamStories: TeamStory[] = [
   },
   {
     name: "Satyendra Tripathi",
-    bio: "Author, Politics of Inclusive Growth & Sustainable Development - Samagra Vikas",
     linkedin: "https://www.linkedin.com/in/satyendra-tripathi-09311a20/",
     role: "Collaborator",
     expertise: "Oncology — predicting tumor markers with proteomics and metabolomics",
@@ -138,7 +131,6 @@ const teamStories: TeamStory[] = [
   },
   {
     name: "Anupam Sarma",
-    bio: "Professor & Head, Department of Oncopathology, Dr. B. Borooah Cancer Institute, India",
     linkedin: "https://www.linkedin.com/in/dr-anupam-sarma-md-phd-20235b29/",
     role: "Collaborator",
     expertise: "Regenerative medicine for cancers, biomarker development and clinical research through genomic and transcriptomic studies",
@@ -147,7 +139,6 @@ const teamStories: TeamStory[] = [
   // Advisors
   {
     name: "Arindam Maitra",
-    bio: "Associate Director & Professor, National Institute of Biomedical Genomics",
     linkedin: "https://www.linkedin.com/in/arindam-maitra-63937017/",
     role: "Advisor",
     expertise: "Integrating functional genomics, transcriptomics and tumor studies",
@@ -155,40 +146,30 @@ const teamStories: TeamStory[] = [
   },
   {
     name: "Bratati Kahali",
-    bio: "Principal Scientist, Centre for Brain Research, Indian Institute of Science",
-    linkedin: "",
     role: "Advisor",
     expertise: "Computational genomics, massive joint genotyping and biobanking",
     image: "/images/Bratati kahali.jpeg",
   },
   {
-    name: "K. Thangraj",
-    bio: "Senior Scientist, Centre for Cellular and Molecular Biology (CCMB), Hyderabad",
-    linkedin: "",
+    name: " K. Thangraj",
     role: "Advisor",
     expertise: "Population genomics and genetic diversity",
     image: "/images/Prof. K. Thangraj.jpeg",
   },
   {
     name: "B.K. Thelma",
-    bio: "Professor, Department of Genetics, University of Delhi",
-    linkedin: "",
     role: "Advisor",
     expertise: "Medical genomics, complex disease genetics and pharmacogenetics",
     image: "/images/Bk thelma.jpeg",
   },
   {
     name: "Ravi Kanan",
-    bio: "Director, Cachar Cancer Hospital and Research Centre (CCHRC), Silchar",
-    linkedin: "",
     role: "Advisor",
     expertise: "Surgical oncology, public health and healthcare administration",
     image: "/images/Dr. Ravi Kanan.jpeg",
   },
   {
     name: "Rashmi Shukla",
-    bio: "",
-    linkedin: "",
     role: "Advisor",
     expertise: "Molecular genetics and clinical NGS",
     image: "/images/Reshmi Shukla.jpeg",
@@ -305,7 +286,7 @@ function TeamCarousel() {
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
-        <div className="min-h-[150px] min-w-0 flex-1 text-center sm:min-h-[132px]" aria-live="polite">
+        <div className="min-h-[104px] min-w-0 flex-1 text-center sm:min-h-[92px]" aria-live="polite">
           <span
             className={`inline-block rounded-full px-3 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${
               person.role === "Advisor" ? "bg-[#e9f5e1] text-[#3a8a1e]" : "bg-sky-50 text-sky-700"
@@ -327,10 +308,7 @@ function TeamCarousel() {
               </a>
             )}
           </div>
-          {person.bio && (
-            <p className="mx-auto mt-1 max-w-md text-sm font-medium leading-snug text-foreground/80">{person.bio}</p>
-          )}
-          <p className="mx-auto mt-2 max-w-md text-sm font-light leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-1 max-w-sm text-sm font-light leading-relaxed text-muted-foreground">
             {person.expertise}
           </p>
         </div>

@@ -5,8 +5,8 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 285.png"
-const APPROACH_IMAGE = "/images/image 286.png"
+const HERO_IMAGE = "/images/image 285.webp"
+const APPROACH_IMAGE = "/images/image 286.webp"
 
 // Bioinformatics service cards — image with overlaid title/description.
 const services = [
@@ -54,10 +54,10 @@ const applications = [
 
 // Technology & infrastructure — image top, title below; grid reflows automatically.
 const technology = [
-  { title: "Cloud-Based Analysis", image: "/images/image 295.png" },
-  { title: "High Performance Computing", image: "/images/image 296.png" },
-  { title: "AI-Assisted Analysis", image: "/images/image 297.png" },
-  { title: "Interactive Data Visualization", image: "/images/image 298.png" },
+  { title: "Cloud-Based Analysis", image: "/images/image 295.webp" },
+  { title: "High Performance Computing", image: "/images/image 296.webp" },
+  { title: "AI-Assisted Analysis", image: "/images/image 297.webp" },
+  { title: "Interactive Data Visualization", image: "/images/image 298.webp" },
 ]
 
 // Workflow — numbered steps; grid reflows automatically.
@@ -75,29 +75,29 @@ const whyChoose = [
   {
     title: "Scientific Expertise",
     description:
-      "A team of senior bioinformaticians, computational biologists, and domain scientists with deep publication and research experience.",
-    image: "/images/image 314.png",
+      "A team of senior bioinformaticians, computational biologists, and\ndomain scientists with deep publication and research experience.",
+    image: "/images/image 314.webp",
     imageAlt: "Bioinformaticians reviewing analysis together",
   },
   {
     title: "Advanced Computational Infrastructure",
     description:
-      "Purpose-built high-performance and cloud environments engineered for genomic-scale workloads.",
-    image: "/images/image 304.png",
+      "Purpose-built high-performance and cloud environments\nengineered for genomic-scale workloads.",
+    image: "/images/image 304.webp",
     imageAlt: "A high-performance computing environment",
   },
   {
     title: "Accurate Data Interpretation",
     description:
-      "Rigorous, validated methods ensuring your results are reproducible, defensible, and publication-ready.",
-    image: "/images/image 306.png",
+      "Rigorous, validated methods ensuring your results are\nreproducible, defensible, and publication-ready.",
+    image: "/images/image 306.webp",
     imageAlt: "A validated analytics pipeline on screen",
   },
   {
     title: "Collaborative Scientific Support",
     description:
-      "Working alongside your researchers as long-term partners in discovery, not distant vendors.",
-    image: "/images/image 307.png",
+      "Working alongside your researchers as long-term partners in\ndiscovery, not distant vendors.",
+    image: "/images/image 307.webp",
     imageAlt: "A research team collaborating in a meeting room",
   },
 ]
@@ -125,7 +125,7 @@ export default function BioinformaticsServicesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium uppercase tracking-[0.15em] text-white"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               Services
             </motion.p>
@@ -140,7 +140,7 @@ export default function BioinformaticsServicesPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Transforming Data
               <br />
@@ -151,7 +151,7 @@ export default function BioinformaticsServicesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Advanced bioinformatics solutions that convert complex genomic, transcriptomic, and multi-omics datasets into accurate, actionable, and research-ready insights.
             </motion.p>
@@ -200,9 +200,9 @@ export default function BioinformaticsServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            Our bioinformatics team combines computational biology, cloud technologies, advanced analytics, and scientific expertise to help researchers unlock the full value of biological data.
+            Our bioinformatics team combines computational biology, cloud technologies, advanced analytics, and scientific expertise to <br/>help researchers unlock the full value of biological data.
           </motion.p>
         </div>
 
@@ -247,9 +247,9 @@ export default function BioinformaticsServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            Supporting scientific discovery across multiple disciplines through advanced computational analysis and biological interpretation.
+            Supporting scientific discovery across multiple disciplines through advanced computational analysis and biological<br/> interpretation.
           </motion.p>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -308,9 +308,9 @@ export default function BioinformaticsServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            Supporting scientific discovery across multiple disciplines through advanced computational analysis and biological interpretation.
+            Supporting scientific discovery across multiple disciplines through advanced computational analysis and biological <br/>interpretation.
           </motion.p>
 
           <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-4">
@@ -365,7 +365,7 @@ export default function BioinformaticsServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
           Delivering scalable computational solutions powered by modern technologies and scientific expertise.
           </motion.p>
@@ -502,7 +502,7 @@ export default function BioinformaticsServicesPage() {
                     <h3 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
                       {item.title}
                     </h3>
-                    <p className="mt-6 max-w-md text-muted-foreground leading-relaxed">
+                    <p className="mt-6 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>
@@ -530,7 +530,7 @@ export default function BioinformaticsServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 text-sm text-muted-foreground md:text-base"
+            className="mt-4  text-sm text-muted-foreground md:text-base"
           >
            Partner with Bencos to transform biological data into actionable scientific insights and accelerate discovery through advanced bioinformatics expertise.
           </motion.p>

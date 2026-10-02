@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 203.png"
-const COMMUNITY_IMAGE = "/images/image 204.png"
+const HERO_IMAGE = "/images/image 203.webp"
+const COMMUNITY_IMAGE = "/images/image 204.webp"
 
 // Conference tracks — image with overlaid title; grid reflows automatically.
 const tracks = [
@@ -37,7 +37,7 @@ const formats = [
   {
     title: "Technology Exhibition",
     description: "Explore the newest sequencing and analysis platforms.",
-    image: "/images/image 214.png",
+    image: "/images/image 214(1).png",
   },
 ]
 
@@ -46,38 +46,40 @@ const whyAttend = [
   {
     title: "Global Speakers",
     description:
-      "Hear from Nobel laureates, principal investigators and industry pioneers presenting the discoveries that will define the next decade of genomics.",
-    image: "/images/image 224.png",
+      "Hear from Nobel laureates, principal investigators and industry\npioneers presenting the discoveries that will define the next\ndecade of genomics.",
+    image: "/images/image 224.webp",
     imageAlt: "A keynote speaker addressing a full conference hall",
   },
   {
     title: "Latest Research",
     description:
-      "Access first-look sessions on newly published studies across sequencing, precision medicine and computational biology.",
-    image: "/images/image 215.png",
+      "Access first-look sessions on newly published studies across\nsequencing, precision medicine and computational biology.",
+    image: "/images/image 215.webp",
     imageAlt: "Researchers discussing findings around a conference table",
   },
   {
     title: "Networking Opportunities",
     description:
-      "Curated networking spaces bring together academia, industry and healthcare to spark meaningful collaborations.",
-    image: "/images/image 216.png",
+      "Curated networking spaces bring together academia, industry\nand healthcare to spark meaningful collaborations.",
+    image: "/images/image 216.webp",
     imageAlt: "Delegates networking at the GATC conference",
   },
   {
     title: "Technology Showcase",
     description:
-      "Experience the newest platforms from global technology leaders driving the next generation of life science tools.",
-    image: "/images/image 217.png",
+      "Experience the newest platforms from global technology\nleaders driving the next generation of life science tools.",
+    image: "/images/image 217.webp",
     imageAlt: "Attendees exploring the GATC technology exhibition",
   },
 ]
 
 // Gallery — first two tiles are tall (top row), the rest are shorter (bottom row).
 const gallery = [
-  { image: "/images/image 219.png", alt: "GATC opening ceremony ribbon cutting" },
-  { image: "/images/image 222.png", alt: "Delegates in a roundtable discussion" },
-  { image: "/images/image 223(4).png", alt: "Keynote speaker on stage" },
+  { image: "/images/image 219.webp", alt: "GATC opening ceremony ribbon cutting" },
+  { image: "/images/image 222.webp", alt: "Delegates in a roundtable discussion" },
+  // { image: "/images/image 223(4).png", alt: "Keynote speaker on stage" },
+  // { image: "/images/image 223(4).png", alt: "Keynote speaker on stage" },
+  // { image: "/images/image 223(4).png", alt: "Keynote speaker on stage" },
 
   
 ]
@@ -85,7 +87,7 @@ const gallery = [
 // Closing image strip above the final CTA.
 const closingImages = [
   { image: "/images/image 223(1).png", alt: "GATC opening ceremony" },
-  { image: "/images/image 221.png", alt: "Delegates in conversation" },
+  { image: "/images/image 221.webp", alt: "Delegates in conversation" },
   { image: "/images/image 223(5).png", alt: "Award presentation at GATC" },
 ]
 
@@ -112,9 +114,9 @@ export default function GatcPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium text-white md:text-xl"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
-              What we do
+              Knowledge Initiatives
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
@@ -127,7 +129,7 @@ export default function GatcPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4x"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Where Science Meets
               <br />
@@ -138,7 +140,7 @@ export default function GatcPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               A global conference for genomics, biotechnology, and scientific collaboration.
             </motion.p>
@@ -150,12 +152,12 @@ export default function GatcPage() {
               className="mt-10"
             >
               <a
-                href="https://gatc.co.in"
+                href="https://gatc-new.netlify.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg hover:shadow-green-500/30"
               >
-                Register Now
+                Explore now
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </motion.div>
@@ -165,7 +167,7 @@ export default function GatcPage() {
 
       {/* ======================= MEETING POINT ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -180,9 +182,9 @@ export default function GatcPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-muted-foreground leading-relaxed"
+            className="mx-auto mt-6 max-w-6xl whitespace-pre-line text-base text-muted-foreground leading-relaxed"
           >
-            GATC is a premier scientific conference providing a collaborative platform where academia, healthcare, biotechnology, industry and innovation converge to exchange knowledge, showcase discoveries and shape the future of genomics.
+            {"GATC is a premier scientific conference providing a collaborative platform where academia, healthcare, biotechnology, industry and\ninnovation converge to exchange knowledge, showcase discoveries and shape the future of genomics."}
           </motion.p>
         </div>
 
@@ -218,7 +220,7 @@ export default function GatcPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
             Six dedicated tracks curated by an international scientific committee to cover the full spectrum of genomics and life sciences.
           </motion.p>
@@ -239,7 +241,7 @@ export default function GatcPage() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                <h3 className="absolute inset-x-0 bottom-0 p-6 text-2xl font-semibold text-white">
+                <h3 className="absolute inset-x-0 group-hover:text-[#4ADE76] bottom-0 p-6 pb-18 text-2xl font-semibold text-white">
                   {item.title}
                 </h3>
               </motion.div>
@@ -258,17 +260,9 @@ export default function GatcPage() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
           >
-            Conference Tracks
+           Featured Experiences
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
-          >
-            Six dedicated tracks curated by an international scientific committee to cover the full spectrum of genomics and life sciences.
-          </motion.p>
+          
 
           <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-4">
             {formats.map((item, index) => (
@@ -348,7 +342,7 @@ export default function GatcPage() {
                     <h3 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
                       {item.title}
                     </h3>
-                    <p className="mt-6 max-w-md text-muted-foreground leading-relaxed">
+                    <p className="mt-6 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>
@@ -376,7 +370,7 @@ export default function GatcPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-5xl text-muted-foreground leading-relaxed"
           >
             A visual record of last year's opening ceremony, keynotes, workshops and award nights.
           </motion.p>
@@ -446,7 +440,7 @@ export default function GatcPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="mt-4 text-sm text-muted-foreground md:text-base"
             >
-              Be part of India's leading genomics and life science conference, where scientific discovery meets collaboration, innovation and real-world impact.
+              Be part of India's leading genomics and life science conference, where scientific<br/> discovery meets collaboration, innovation and real-world impact.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -456,7 +450,7 @@ export default function GatcPage() {
               className="mt-8"
             >
               <a
-                href="https://gatc.co.in"
+                href="https://gatc-new.netlify.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-green-600 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg hover:shadow-green-500/30"

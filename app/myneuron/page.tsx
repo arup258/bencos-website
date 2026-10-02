@@ -6,8 +6,8 @@ import { motion } from "framer-motion"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the src below to change it.
-const HERO_IMAGE = "/images/image 153.png"
-const JOIN_IMAGE = "/images/image 164.png"
+const HERO_IMAGE = "/images/image 153.webp"
+const JOIN_IMAGE = "/images/image 164.webp"
 
 // Platform modules carousel — add/edit entries; every card reveals "Read more" on hover.
 const platformModules = [
@@ -17,32 +17,40 @@ const platformModules = [
     image: "/images/image 154.png",
     target: "_blank",
     rel: "noopener noreferrer",
-    href: "https://www.myneuronworld.com",
+    href: "https://www.myneuronworld.com/plasma",
     
   },
   {
     title: "Events",
     description: "Discover and host conferences, workshops and meetups across the scientific community.",
-    image: "/images/image 155.png",
+    image: "/images/image 155.webp",
     target: "_blank",
     rel: "noopener noreferrer",
-    href: "https://www.myneuronworld.com",
+    href: "https://www.myneuronworld.com/events",
   },
   {
     title: "My Bookshelf",
-    description: "Your personal library of papers, books and references — beautifully organised.",
-    image: "/images/image 156.png",
+    description: "Your personal library of papers, books, and references  organized for faster research.",
+    image: "/images/image 156.webp",
     target: "_blank",
     rel: "noopener noreferrer",
-    href: "https://www.myneuronworld.com",
+    href: "https://www.myneuronworld.com/my-bookshelf",
   },
   {
     title: "Impulse Feed",
     description: "A real-time stream of the breakthroughs and conversations that matter to you.",
-    image: "/images/image 157.png",
+    image: "/images/image 157.webp",
     target: "_blank",
     rel: "noopener noreferrer",
-    href: "https://www.myneuronworld.com",
+    href: "https://www.myneuronworld.com/impulse/feed",
+  },
+  {
+    title: "Articles",
+    description: "Long-form writing from researchers, thinkers and pioneers, distilled for clarity.",
+    image: "/images/image 457.webp",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    href: "https://www.myneuronworld.com/news",
   },
 ]
 
@@ -111,7 +119,7 @@ export default function MyNeuronPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium text-white md:text-xl"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               What we do
             </motion.p>
@@ -126,7 +134,7 @@ export default function MyNeuronPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Empowering Scientific Discovery
               <br />
@@ -137,9 +145,9 @@ export default function MyNeuronPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
-              A unified ecosystem for scientific research, innovation, learning and collaboration.
+             A unified platform for scientific research, AI-powered discovery, collaboration, learning, and knowledge sharing.
             </motion.p>
 
             <motion.div
@@ -173,7 +181,7 @@ export default function MyNeuronPage() {
               transition={{ duration: 0.6 }}
               className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
             >
-              One Intelligent Platform. Multiple Possibilities.
+              One Intelligent Platform Multiple Possibilities
             </motion.h2>
 
             {/* Arrow controls */}
@@ -254,19 +262,19 @@ export default function MyNeuronPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-                className="group relative aspect-[4/5] overflow-hidden rounded-xl bg-neutral-900"
+                className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-neutral-900"
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6">
-                  <h3 className="text-xl font-semibold text-white md:text-2xl">
+                <div className="absolute inset-x-0 bottom-0 p-6 pb-16">
+                  <h3 className="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-[#4ADE76] md:text-2xl">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/80">
+                  <p className="mt-3 text-sm leading-relaxed text-white">
                     {item.description}
                   </p>
                 </div>
@@ -289,25 +297,25 @@ export default function MyNeuronPage() {
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[420px] max-w-7xl items-center px-4 py-20 lg:min-h-[480px] lg:px-8">
-          <div className="max-w-xl">
+          <div className="max-w-3xl">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-3xl sm:text-4xl font-medium leading-tight text-white md:text-5xl"
+              className="max-w-xl text-3xl sm:text-4xl font-medium lg:whitespace-nowrap leading-tight text-white md:text-5xl"
             >
-              Join the <span className="text-[#4ADE76]">Future of Scientific Collaboration</span>
+              Join the <span className="text-[#4ADE76]">Future of Scientific <br/> Collaboration</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-6 max-w-lg text-sm leading-relaxed text-white/85 md:text-base"
+              className="mt-6 text-sm leading-relaxed text-white/85 md:text-base lg:whitespace-nowrap"
             >
               Step into the ecosystem where researchers, builders and thinkers move ideas
-              forward — together.
+              forward — <br/>together.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

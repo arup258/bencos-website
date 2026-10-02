@@ -4,12 +4,12 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 440.png"
-const FUTURE_IMAGE = "/images/image 441.png"
-const PURPOSE_IMAGE = "/images/image 442.png"
-const VISION_IMAGE = "/images/image 27.png"
+const HERO_IMAGE = "/images/image 440.webp"
+const FUTURE_IMAGE = "/images/image 441.webp"
+const PURPOSE_IMAGE = "/images/image 442.webp"
+const VISION_IMAGE = "/images/image 27.webp"
 const COMMITMENT_IMAGE = "/images/image 443(1).png"
-const DISCOVERIES_IMAGE = "/images/image 444.png"
+const DISCOVERIES_IMAGE = "/images/image 444.webp"
 
 const visionPoints = [
   "Connect researchers, clinicians and innovators worldwide",
@@ -42,7 +42,7 @@ export default function CommunityPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium text-white md:text-xl"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               Who we are
             </motion.p>
@@ -57,7 +57,7 @@ export default function CommunityPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
              Sustainability
             </motion.h1>
@@ -66,7 +66,7 @@ export default function CommunityPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Driving scientific innovation responsibly while creating long-term value for people, healthcare, and the planet.
             </motion.p>
@@ -90,8 +90,8 @@ export default function CommunityPage() {
                  Sustainability
               </h2>
 
-              <p className="mt-8 max-w-md text-muted-foreground leading-relaxed">
-                At Bencos, sustainability means advancing science responsibly. We integrate ethical innovation, environmentally conscious practices, and digital transformation across our research and operations to reduce impact, create lasting value, and build a healthier future for people and the planet.
+              <p className="mt-8 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
+                {"At Bencos, sustainability means advancing science responsibly.\nWe integrate ethical innovation, environmentally conscious\npractices, and digital transformation across our research and\noperations to reduce impact, create lasting value, and build a\nhealthier future for people and the planet."}
               </p>
             </motion.div>
 
@@ -115,15 +115,15 @@ export default function CommunityPage() {
 
       {/* ======================= PURPOSE STATEMENT ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-2xl"
+            className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-2xl whitespace-pre-line"
           >
-            Every scientific breakthrough should contribute to a healthier world while protecting the environment for future generations.
+            {"Every scientific breakthrough should contribute to a healthier world while protecting the\nenvironment for future generations."}
           </motion.h2>
         </div>
 
@@ -161,8 +161,8 @@ export default function CommunityPage() {
                 Responsibility
               </h2>
 
-              <p className="mt-8 max-w-md text-muted-foreground leading-relaxed">
-                At Bencos, innovation is driven by responsibility. We combine advanced science, technology, and sustainable practices to deliver smarter healthcare solutions while collaborating with global partners to create lasting impact for people, science, and the environment.
+              <p className="mt-8 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
+                {"At Bencos, innovation is driven by responsibility. We combine\nadvanced science, technology, and sustainable practices to\ndeliver smarter healthcare solutions while collaborating with\nglobal partners to create lasting impact for people, science,\nand the environment."}
               </p>
             </motion.div>
 
@@ -185,40 +185,41 @@ export default function CommunityPage() {
       </section>
 
       {/* ======================= DISCOVERIES BANNER ======================= */}
-      <section className="relative min-h-[480px] overflow-hidden lg:min-h-[560px]">
-        <div className="absolute inset-0">
+      <section className="bg-background py-16 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl"
+          >
+            Looking Ahead
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mx-auto mt-6 max-w-7xl whitespace-pre-line text-sm leading-relaxed text-muted-foreground md:text-base"
+          >
+            {"Our vision is to build a more sustainable future for science and healthcare through responsible innovation, renewable practices, and advanced\ntechnologies. Guided by scientific excellence and transparency, we create lasting impact through every partnership, discovery, and decision."}
+          </motion.p>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="relative mt-10 aspect-[4/3] w-full overflow-hidden bg-neutral-900 sm:aspect-[16/9] lg:aspect-[21/9]"
+        >
           <img
             src={DISCOVERIES_IMAGE}
             alt="Sunrise over a global research campus"
             className="h-full w-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-black/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-        </div>
-
-        <div className="relative z-10 mx-auto flex min-h-[480px] max-w-7xl items-center px-4 py-20 lg:min-h-[560px] lg:px-8">
-          <div className="max-w-xl">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-3xl sm:text-4xl font-medium leading-tight text-white md:text-5xl"
-            >
-              Stronger together, for generations.
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-6 max-w-lg text-sm leading-relaxed text-white/85 md:text-base"
-            >
-              Our community is committed to advancing research and innovation, transforming
-              ideas into discoveries and discoveries into better healthcare for the future.
-            </motion.p>
-          </div>
-        </div>
+        </motion.div>
       </section>
 
       

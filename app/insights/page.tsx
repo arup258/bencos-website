@@ -6,34 +6,34 @@ import { motion } from "framer-motion"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 225.png"
-const EVENTS_IMAGE = "/images/image 236.png"
-const INSPIRED_IMAGE = "/images/image 241.png"
+const HERO_IMAGE = "/images/image 225.webp"
+const EVENTS_IMAGE = "/images/image 236.webp"
+const INSPIRED_IMAGE = "/images/image 460.webp"
 
 // Featured stories carousel — image-top cards; every card reveals "Read more" on hover.
 const stories = [
   {
     title: "Clinical Genomics Success",
     description: "How a national hospital network reduced diagnostic timelines from weeks to days using Bencos clinical genomics.",
-    image: "/images/image 233.png",
+    image: "/images/image 233.webp",
     href: "/clinical-applications",
   },
   {
     title: "AI in Bioinformatics",
     description: "Deploying AI-assisted variant interpretation across large-scale sequencing pipelines.",
-    image: "/images/image 234.png",
+    image: "/images/image 234.webp",
     href: "/twine",
   },
   {
     title: "Precision Medicine",
     description: "Rolling out genomics-guided treatment pathways for oncology and rare disease programs.",
-    image: "/images/image 235.png",
+    image: "/images/image 235.webp",
     href: "/clinical-applications",
   },
   {
     title: "Multi-omics at Scale",
     description: "Integrating genomics, transcriptomics and proteomics for deeper biological insight.",
-    image: "/images/image 236.png",
+    image: "/images/image 236.webp",
     href: "/life-sciences",
   },
 ]
@@ -51,17 +51,17 @@ const perspectives = [
   {
     title: "The Future of AI in Healthcare",
     author: "Dr. Amelia Reyes",
-    image: "/images/image 241.png",
+    image: "/images/image 241.webp",
   },
   {
     title: "Next Generation Genomics",
     author: "Prof. Marcus Chen",
-    image: "/images/image 242.png",
+    image: "/images/image 242.webp",
   },
   {
     title: "Building Intelligent Research Platforms",
     author: "Ravi Menon",
-    image: "/images/image 243.png",
+    image: "/images/image 243.webp",
   },
 ]
 
@@ -78,19 +78,19 @@ const topics = [
   {
     title: "Artificial Intelligence",
     description: "How artificial intelligence is accelerating genomic interpretation and precision medicine.",
-    image: "/images/image 226.png",
+    image: "/images/image 226.webp",
     href: "/ai-data-analytics",
   },
   {
     title: "Healthcare",
     description: "How genomics, diagnostics, and digital technologies are changing patient care.",
-    image: "/images/image 227.png",
+    image: "/images/image 227.webp",
     href: "/clinical-applications",
   },
   {
     title: "Conference",
     description: "Highlights from Bencos' flagship scientific conference connecting researchers and innovators worldwide.",
-    image: "/images/image 228.png",
+    image: "/images/image 228.webp",
     href: "/gatc",
   },
 ]
@@ -133,7 +133,7 @@ export default function InsightsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium uppercase tracking-[0.15em] text-white"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               Insights
             </motion.p>
@@ -148,7 +148,7 @@ export default function InsightsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Knowledge That
               <br />
@@ -159,7 +159,7 @@ export default function InsightsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Discover the latest insights in science, healthcare, and technology shaping the future of innovation across the Bencos ecosystem.
             </motion.p>
@@ -271,7 +271,7 @@ export default function InsightsPage() {
                   <h3 className="text-2xl font-semibold text-white transition-colors group-hover:text-green-600">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm text-white/80">{item.subtitle}</p>
+                  <p className="mt-2 pb-16 text-sm text-white/80">{item.subtitle}</p>
                 </div>
               </div>
             ))}
@@ -367,7 +367,7 @@ export default function InsightsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
            Discover upcoming conferences, workshops, webinars, and scientific events organized across the Bencos ecosystem.
           </motion.p>
@@ -405,7 +405,7 @@ export default function InsightsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
             The Bencos flagship conference bringing together scientists, clinicians, and technologists advancing the future of genomics.
           </motion.p>
@@ -453,9 +453,9 @@ export default function InsightsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            Thought leadership from Bencos scientists, healthcare experts, researchers, and technology leaders discussing the future of life sciences, healthcare, AI, and innovation.
+            Thought leadership from Bencos scientists, healthcare experts, researchers, and technology leaders discussing the future of life<br/> sciences, healthcare, AI, and innovation.
           </motion.p>
 
           <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-3">
@@ -487,7 +487,7 @@ export default function InsightsPage() {
 
       {/* ======================= INSPIRED STATEMENT ======================= */}
       <section className="bg-background pt-16 lg:pt-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -502,7 +502,7 @@ export default function InsightsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-muted-foreground leading-relaxed"
+            className="mt-6 max-w-6xl text-muted-foreground leading-relaxed"
           >
             Every insight shared by Bencos reflects our commitment to advancing science, improving healthcare, and empowering innovation through collaboration, research, and technology.
           </motion.p>
@@ -523,7 +523,7 @@ export default function InsightsPage() {
         </motion.div>
 
         {/* Centered CTA */}
-        <div className="mx-auto max-w-3xl px-4 pb-16 pt-16 text-center lg:px-8 lg:pb-20">
+        <div className="mx-auto max-w-6xl px-4 pb-16 pt-16 text-center lg:px-8 lg:pb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -540,7 +540,7 @@ export default function InsightsPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-4 text-sm text-muted-foreground md:text-base"
           >
-            Receive the latest research publications, company news, scientific perspectives, and event updates from across the Bencos ecosystem.         
+            Receive the latest research publications, company news, scientific perspectives,<br/> and event updates from across the Bencos ecosystem.         
         </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

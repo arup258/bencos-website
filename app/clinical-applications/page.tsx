@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { ArrowLeft, ArrowRight, Dna, Microscope, Activity, Baby, Pill, Bug } from "lucide-react"
 
 // Section images live in /public/images — swap the src below to change it.
-const HERO_IMAGE = "/images/image 131.png"
+const HERO_IMAGE = "/images/image 131.webp"
 const TRANSFORM_IMAGE = "/images/image 136.png"
 
 // Clinical spectrum carousel cards — add/edit entries; include `href` for a "Read more" link.
@@ -14,26 +14,26 @@ const spectrum = [
   {
     title: "Clinical Genomics",
     description: "Genetic testing for inherited disorders with curated, evidence-grade panels.",
-    image: "/images/image 132.png",
+    image: "/images/image 132.webp",
     href: "",
   },
   {
     title: "Cancer Genomics",
     description:
       "Precision oncology and targeted therapy support across solid & hematologic tumors.",
-    image: "/images/image 133.png",
+    image: "/images/image 133.webp",
     href: "/services",
   },
   {
     title: "Rare Disease Diagnostics",
     description: "Advanced variant interpretation that resolves the diagnostic odyssey.",
-    image: "/images/image 134.png",
+    image: "/images/image 134.webp",
     href: "",
   },
   {
     title: "Reproductive Health",
     description: "Carrier screening and prenatal insights delivered in a clinician-ready format.",
-    image: "/images/image 135.png",
+    image: "/images/image 135.webp",
     href: "",
   },
 
@@ -57,23 +57,23 @@ const served = [
   {
     title: "Hospitals",
     description: "Helping healthcare providers improve diagnostic accuracy and patient outcomes.",
-    image: "/images/image 137.png",
+    image: "/images/image 137.webp",
   },
   {
     title: "Diagnostic Laboratories",
     description: "Delivering advanced genomic analysis and molecular diagnostic solutions.",
-    image: "/images/image 138.png",
+    image: "/images/image 138.webp",
   },
   {
     title: "Healthcare Institutions",
     description:
       "Supporting modern healthcare systems through precision medicine and digital innovation.",
-    image: "/images/image 139.png",
+    image: "/images/image 139.webp",
   },
   {
     title: "Research Hospitals",
     description: "Connecting clinical research with real-world healthcare applications.",
-    image: "/images/image 140.png",
+    image: "/images/image 140.webp",
   },
 ]
 
@@ -186,9 +186,10 @@ export default function ClinicalApplicationsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium text-white md:text-xl"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
-              What we do
+              Who we are
+
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
@@ -201,18 +202,18 @@ export default function ClinicalApplicationsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Advancing Healthcare Through
               <br />
-              Clinical Innovation.
+              Clinical Innovation
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Empowering clinicians with precision genomics, AI-powered diagnostics, automated clinical reporting, and personalized medicine — for faster, smarter patient care.
             </motion.p>
@@ -226,7 +227,7 @@ export default function ClinicalApplicationsPage() {
               <Link
               target="_blank"
               rel="noopener noreferrer"
-                href="https://bencoshealth.in/"
+                href="/brs-microsite"
                 className="group inline-flex items-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg hover:shadow-green-500/30"
               >
                 Explore Clinical Solutions
@@ -248,7 +249,7 @@ export default function ClinicalApplicationsPage() {
               transition={{ duration: 0.6 }}
               className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
             >
-              Built for the full clinical spectrum
+              Built For The Full Clinical Spectrum
             </motion.h2>
 
             {/* Arrow controls */}
@@ -304,13 +305,13 @@ export default function ClinicalApplicationsPage() {
 
       {/* ======================= TRANSFORMING RESEARCH ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
+            className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl lg:whitespace-nowrap"
           >
             Transforming Research into Better Patient Care
           </motion.h2>
@@ -319,7 +320,7 @@ export default function ClinicalApplicationsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-muted-foreground leading-relaxed"
+            className="mx-auto mt-6 text-[14px] text-muted-foreground leading-relaxed text-pretty"
           >
             Healthcare is evolving through genomics, artificial intelligence, and precision medicine. Bencos combines scientific expertise with innovative technologies to support faster diagnoses, personalized treatment strategies, and improved clinical decision-making across modern healthcare.
           </motion.p>
@@ -350,7 +351,7 @@ export default function ClinicalApplicationsPage() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
           >
-            Built for the full clinical spectrum
+            Built For The Full Clinical Spectrum
           </motion.h2>
 
           <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
@@ -391,7 +392,7 @@ export default function ClinicalApplicationsPage() {
             transition={{ duration: 0.6 }}
             className="text-center text-3xl font-semibold leading-tight text-white md:text-4xl"
           >
-            Real outcomes from real clinics
+            Real Outcomes From Real Clinics
           </motion.h2>
 
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -404,18 +405,18 @@ export default function ClinicalApplicationsPage() {
                 transition={{ duration: 0.5, delay: (index % 2) * 0.1 }}
                 className={`rounded-2xl border bg-white/[0.02] p-8 ${study.border} ${study.glow}`}
               >
-                <h3 className={`text-lg font-semibold leading-snug md:text-xl ${study.text}`}>
+                <h3 className={`text-lg font-normal leading-snug md:text-xl ${study.text}`}>
                   {study.title}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/60">
+                <p className="mt-4 text-sm leading-relaxed text-white">
                   {study.description}
                 </p>
-                <Link
+                {/* <Link
                   href="/contact"
                   className="mt-6 inline-block text-xs font-semibold text-white transition-colors hover:text-green-600"
                 >
                   Read case study
-                </Link>
+                </Link> */}
               </motion.div>
             ))}
           </div>
@@ -425,24 +426,24 @@ export default function ClinicalApplicationsPage() {
      
       {/* ======================= CLOSING CTA ======================= */}
       <section className="bg-gradient-to-r from-neutral-50 via-white to-neutral-50 py-16 lg:py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
+            className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl"
           >
-            Transform clinical care with
+            Transform Clinical Care with
             <br />
-            precision genomics.
+            Precision Genomics
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-muted-foreground leading-relaxed"
+            className="mt-8 text-muted-foreground leading-relaxed"
           >
             Accelerate diagnosis, improve patient outcomes, and empower clinicians with
             AI-driven genomic intelligence.

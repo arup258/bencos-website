@@ -5,8 +5,8 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 257.png"
-const OVERVIEW_IMAGE = "/images/image 258.png"
+const HERO_IMAGE = "/images/image 257.webp"
+const OVERVIEW_IMAGE = "/images/image 258.webp"
 
 // Genomics service cards — image with overlaid title; grid reflows automatically.
 const services = [
@@ -30,10 +30,10 @@ const applications = [
 
 // Technology platform — image top, title below; grid reflows automatically.
 const technology = [
-  { title: "Next-Generation Sequencing", image: "/images/image 271.png" },
-  { title: "Long-Read Sequencing", image: "/images/image 272.png" },
-  { title: "Automated Laboratory Workflow", image: "/images/image 273.png" },
-  { title: "High-Performance Computing", image: "/images/image 274.png" },
+  { title: "Next-Generation Sequencing", image: "/images/image 271.webp" },
+  { title: "Long-Read Sequencing", image: "/images/image 272.webp" },
+  { title: "Automated Laboratory Workflow", image: "/images/image 273.webp" },
+  { title: "High-Performance Computing", image: "/images/image 274.webp" },
 ]
 
 // Workflow — numbered steps; grid reflows automatically.
@@ -51,29 +51,29 @@ const whyChoose = [
   {
     title: "Scientific Expertise",
     description:
-      "Our team of geneticists, molecular biologists, and bioinformaticians brings deep domain experience across genomics disciplines, translating complex data into meaningful scientific outcomes.",
-    image: "/images/image 281.png",
+      "Our team of geneticists, molecular biologists, and bioinformaticians\nbrings deep domain experience across genomics disciplines,\ntranslating complex data into meaningful scientific outcomes.",
+    image: "/images/image 281.webp",
     imageAlt: "Two scientists discussing results in a laboratory",
   },
   {
     title: "Advanced Laboratory Infrastructure",
     description:
-      "State-of-the-art sequencing platforms, automated liquid handling, and rigorously controlled environments deliver the reproducibility that world-class research demands.",
-    image: "/images/image 282.png",
+      "State-of-the-art sequencing platforms, automated liquid handling,\nand rigorously controlled environments deliver the reproducibility\nthat world-class research demands.",
+    image: "/images/image 282.webp",
     imageAlt: "A modern automated genomics laboratory",
   },
   {
     title: "Accurate Bioinformatics",
     description:
-      "Validated pipelines, curated reference databases, and transparent analytics turn raw sequencing reads into biologically actionable insights you can trust.",
-    image: "/images/image 283.png",
+      "Validated pipelines, curated reference databases, and transparent\nanalytics turn raw sequencing reads into biologically actionable\ninsights you can trust.",
+    image: "/images/image 283.webp",
     imageAlt: "A bioinformatician analysing sequencing data on screen",
   },
   {
     title: "Reliable Scientific Partnership",
     description:
-      "Every project contributes to improving healthcare, advancing research, and creating meaningful impact worldwide.",
-    image: "/images/image 284.png",
+      "Every project contributes to improving healthcare, advancing\nresearch, and creating meaningful impact worldwide.",
+    image: "/images/image 284.webp",
     imageAlt: "A research team collaborating in a meeting room",
   },
 ]
@@ -101,7 +101,7 @@ export default function GenomicsServicesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium uppercase tracking-[0.15em] text-white"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               Services
             </motion.p>
@@ -116,7 +116,7 @@ export default function GenomicsServicesPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Unlock the Power
               <br />
@@ -127,7 +127,7 @@ export default function GenomicsServicesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Accelerating scientific discovery through advanced DNA and RNA sequencing, precision genomics, and comprehensive data analysis that empower research, diagnostics, and innovation.
             </motion.p>
@@ -176,9 +176,9 @@ export default function GenomicsServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-5xl whitespace-pre-line text-muted-foreground leading-relaxed"
           >
-            We provide end-to-end genomics services — from sample preparation and sequencing to advanced bioinformatics analysis — enabling researchers and clinicians to uncover genetic insights with confidence.
+            {"We provide end-to-end genomics services — from sample preparation and sequencing to advanced bioinformatics\nanalysis — enabling researchers and clinicians to uncover genetic insights with confidence."}
           </motion.p>
         </div>
 
@@ -223,7 +223,7 @@ export default function GenomicsServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
             A complete portfolio of sequencing and analysis services designed for scientific rigor and reproducibility.
           </motion.p>
@@ -244,7 +244,8 @@ export default function GenomicsServicesPage() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                <h3 className="absolute inset-x-0 bottom-0 p-6 text-xl font-semibold text-white md:text-2xl">
+                <h3 className="absolute 
+                group-hover:text-[#4ADE76]  pb-16 inset-x-0 bottom-0 p-6 text-xl font-semibold text-white md:text-2xl">
                   {item.title}
                 </h3>
               </motion.div>
@@ -279,10 +280,10 @@ export default function GenomicsServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
             Our genomics services support research, clinical innovation, agriculture,
-            biotechnology, and pharmaceutical development by delivering reliable genomic
+            biotechnology, and pharmaceutical development by  <br/>delivering reliable genomic
             insights.
           </motion.p>
 
@@ -338,9 +339,9 @@ export default function GenomicsServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            We utilize industry-leading sequencing technologies and validated laboratory workflows to ensure accurate, reproducible, and high-quality genomic data.
+            We utilize industry-leading sequencing technologies and validated laboratory workflows to ensure accurate, reproducible, and <br/>high-quality genomic data.
           </motion.p>
 
           <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
@@ -483,7 +484,7 @@ export default function GenomicsServicesPage() {
                     <h3 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
                       {item.title}
                     </h3>
-                    <p className="mt-6 max-w-md text-muted-foreground leading-relaxed">
+                    <p className="mt-6 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>

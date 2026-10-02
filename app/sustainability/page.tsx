@@ -5,10 +5,10 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 445.png"
-const INTRO_IMAGE = "/images/image 451.png"
-const COLLAB_IMAGE = "/images/image 450.png"
-const IMPACT_IMAGE = "/images/image 449.png"
+const HERO_IMAGE = "/images/image 445.webp"
+const INTRO_IMAGE = "/images/image 451.webp"
+const COLLAB_IMAGE = "/images/image 450.webp"
+const IMPACT_IMAGE = "/images/image 449.webp"
 
 // Alternating content sections — add/edit entries and the layout flips automatically.
 const sustainabilitySections = [
@@ -17,17 +17,17 @@ const sustainabilitySections = [
   {
     heading: ["Responsible Scientific Innovation"],
     paragraphs: [
-      "Bencos advances scientific discovery through responsible research practices, ethical data management, and technologies designed to improve healthcare while maintaining the highest standards of quality, transparency, and integrity.",
+      "Bencos advances scientific discovery through responsible research\npractices, ethical data management, and technologies designed to\nimprove healthcare while maintaining the highest standards of\nquality, transparency, and integrity.",
     ],
-    image: "/images/image 447.png",
+    image: "/images/image 447.webp",
     imageAlt: "Clean technology powering sustainable research",
   },
   {
     heading: ["Digital Transformation for a Better Tomorrow"],
     paragraphs: [
-      "By embracing artificial intelligence, digital platforms, and intelligent automation, Bencos develops sustainable solutions that improve efficiency, reduce complexity, and accelerate innovation across life sciences and healthcare.",
+      "By embracing artificial intelligence, digital platforms, and\nintelligent automation, Bencos develops sustainable solutions\nthat improve efficiency, reduce complexity, and accelerate\ninnovation across life sciences and healthcare.",
     ],
-    image: "/images/image 448.png",
+    image: "/images/image 448.webp",
     imageAlt: "A thriving natural landscape representing lasting impact",
   },
 ]
@@ -38,7 +38,7 @@ const initiatives = [
     name: "Green Laboratories",
     description:
       "Energy-efficient facilities, responsible resource use, and greener lab practices that reduce our environmental footprint.",
-    image: "/images/image 81.png",
+    image: "/images/image 81.webp",
     href: "",
     external: false,
   },
@@ -46,7 +46,7 @@ const initiatives = [
     name: "Responsible Computing",
     description:
       "Low-impact, scalable infrastructure and AI workflows engineered to deliver more science with fewer resources.",
-    image: "/images/image 82.png",
+    image: "/images/image 82.webp",
     href: "",
     external: false,
   },
@@ -54,7 +54,7 @@ const initiatives = [
     name: "Community Wellbeing",
     description:
       "Programs that support the health, education, and wellbeing of the communities our science is meant to serve.",
-    image: "/images/image 87.png",
+    image: "/images/image 87.webp",
     href: "",
     external: false,
   },
@@ -83,7 +83,7 @@ export default function SustainabilityPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium text-white md:text-xl"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               Who we are
             </motion.p>
@@ -98,7 +98,7 @@ export default function SustainabilityPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Building a Sustainable Future
               <br />
@@ -109,7 +109,7 @@ export default function SustainabilityPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Driving sustainable impact through responsible science and ethical innovation.
             </motion.p>
@@ -119,7 +119,7 @@ export default function SustainabilityPage() {
 
       {/* ======================= INTRO STATEMENT ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -134,9 +134,9 @@ export default function SustainabilityPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-muted-foreground leading-relaxed"
+            className="mx-auto mt-6 max-w-5xl whitespace-pre-line text-muted-foreground leading-relaxed"
           >
-            We believe that scientific innovation should create lasting value for people, communities, and the environment. Every solution we develop is guided by responsibility, integrity, and a vision for a healthier and more sustainable future.
+            {"We believe that scientific innovation should create lasting value for people, communities, and the environment. Every\nsolution we develop is guided by responsibility, integrity, and a vision for a healthier and more sustainable future."}
           </motion.p>
         </div>
 
@@ -157,7 +157,7 @@ export default function SustainabilityPage() {
 
       {/* ======================= ALTERNATING CONTENT SECTIONS ======================= */}
       {sustainabilitySections.map((section, index) => {
-        const imageOnLeft = index % 2 === 1
+        const imageOnLeft = index % 2 === 0
         return (
           <section key={section.heading.join(" ")} className="bg-background py-16 lg:py-20">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -196,7 +196,7 @@ export default function SustainabilityPage() {
                   {section.paragraphs.map((para, pIndex) => (
                     <p
                       key={pIndex}
-                      className={`${pIndex === 0 ? "mt-8" : "mt-4"} max-w-md text-muted-foreground leading-relaxed`}
+                      className={`${pIndex === 0 ? "mt-8" : "mt-4"} max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed`}
                     >
                       {para}
                     </p>
@@ -214,7 +214,7 @@ export default function SustainabilityPage() {
 
       {/* ======================= GREATER IMPACT ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -229,9 +229,9 @@ export default function SustainabilityPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-muted-foreground leading-relaxed"
+            className="mx-auto mt-6 max-w-5xl whitespace-pre-line text-muted-foreground leading-relaxed"
           >
-            Sustainability extends beyond technology. We support scientific education, collaborative research, knowledge sharing, and community engagement to empower researchers, healthcare professionals, students, and future innovators.
+            {"Sustainability extends beyond technology. We support scientific education, collaborative research, knowledge sharing,\nand community engagement to empower researchers, healthcare professionals, students, and future innovators."}
           </motion.p>
         </div>
 
@@ -264,11 +264,8 @@ export default function SustainabilityPage() {
               <h2 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
                 Growing Responsibly
               </h2>
-              <p className="mt-8 max-w-md text-muted-foreground leading-relaxed">
-                As the Bencos ecosystem grows, we remain committed to responsible
-                business practices, environmental awareness, ethical governance, and
-                long-term partnerships that create positive impact across industries
-                and communities.
+              <p className="mt-8 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
+                {"As the Bencos ecosystem grows, we remain committed to\nresponsible business practices, environmental awareness,\nethical governance, and long-term partnerships that create\npositive impact across industries and communities."}
               </p>
             </motion.div>
 
@@ -292,7 +289,7 @@ export default function SustainabilityPage() {
 
       {/* ======================= INNOVATION WITH PURPOSE ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -307,11 +304,9 @@ export default function SustainabilityPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-muted-foreground leading-relaxed"
+            className="mx-auto mt-6 max-w-5xl whitespace-pre-line text-muted-foreground leading-relaxed"
           >
-            Our vision is to build a future where scientific progress, technological
-            innovation, and sustainable development work together to improve lives and
-            create lasting global impact.
+            {"Our vision is to build a future where scientific progress, technological innovation, and sustainable development work\ntogether to improve lives and create lasting global impact."}
           </motion.p>
         </div>
 
@@ -347,9 +342,9 @@ export default function SustainabilityPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 text-sm text-muted-foreground md:text-base"
+            className="mt-4 whitespace-pre-line text-sm text-muted-foreground md:text-base"
           >
-           Together with our partners, researchers, healthcare professionals, and communities, Bencos is shaping a future driven by innovation, responsibility, and sustainable growth.
+            {"Together with our partners, researchers, healthcare professionals, and\ncommunities, Bencos is shaping a future driven by innovation, responsibility, and\nsustainable growth."}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

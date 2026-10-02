@@ -3,39 +3,39 @@
 import { useRef } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowLeft, ArrowRight, Dna, Microscope, Activity, Baby, Pill, Bug, Target } from "lucide-react"
+import { ArrowLeft, ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the src below to change it.
-const HERO_IMAGE = "/images/image 141.png"
+const HERO_IMAGE = "/images/image 141.webp"
 
 // Genomic stack carousel cards — add/edit entries; include `href` for a "Read more" link.
 const stack = [
   {
     title: "Whole Genome Analysis",
-    description: "End-to-end WGS pipelines with germline & somatic calling.",
-    image: "/images/image 142.png",
+    description: "End-to-end WGS pipelines with germline and somatic variant calling.",
+    image: "/images/image 142.webp",
     target: "_blank",
     href: "https://bencoshealth.in/Consultancy.html",
   },
   {
     title: "Whole Exome Analysis",
-    description: "Curated WES workflows tuned for clinical-grade accuracy.",
-    image: "/images/image 143.png",
+    description: "Clinical-grade WES workflows built for high accuracy.",
+    image: "/images/image 143.webp",
     target: "_blank",
     href: "https://bencoshealth.in/Consultancy.html",
     
   },
   {
     title: "Transcriptomics",
-    description: "Bulk and single-cell RNA-seq with differential expression.",
-    image: "/images/image 144.png",
+    description: "Bulk and single-cell RNA-seq with differential expression analysis",
+    image: "/images/image 144.webp",
     target: "_blank",
     href: "https://bencoshealth.in/Consultancy.html",
   },
   {
     title: "Variant Interpretation",
-    description: "ACMG-aligned, AI-augmented variant classification and reporting.",
-    image: "/images/image 145.png",
+    description: "ACMG-aligned, AI-augmented variant classification and reporting for faster clinical decisions.",
+    image: "/images/image 145.webp",
     target: "_blank",
     href: "https://bencoshealth.in/Consultancy.html",
   },
@@ -44,7 +44,7 @@ const stack = [
 
   {
     title: "AI Assisted Decision Support",
-    description: "Contextual recommendations from millions of variants.",
+    description: "Contextual recommendations drawn from millions of variants to support precise genomic interpretation.",
     image: "/images/image 145(2).png",
     href: "",
   },
@@ -55,22 +55,22 @@ const users = [
   {
     title: "Clinical Laboratories",
     description: "Supporting genomic diagnostics with intelligent interpretation.",
-    image: "/images/image 146.png",
+    image: "/images/image 146.webp",
   },
   {
     title: "Hospitals & Healthcare Systems",
     description: "Enabling precision medicine through advanced genomic technologies.",
-    image: "/images/image 147.png",
+    image: "/images/image 147.webp",
   },
   {
     title: "Biotech & Pharma",
     description: "Accelerating biological discovery with scalable genomic analysis.",
-    image: "/images/image 151.png",
+    image: "/images/image 151.webp",
   },
   {
     title: "Research Institutions",
     description: "Accelerating biological discovery with scalable genomic analysis.",
-    image: "/images/image 148.png",
+    image: "/images/image 148.webp",
   },
 ]
 
@@ -82,7 +82,7 @@ const integrations = [
     image: "/images/image 152.png",
   },
   {
-    title: "Bencos Health",
+    title: "Bencos Healthcare",
     description: "Clinical genomics, precision medicine, and healthcare innovation.",
     image: "/images/image 149.png",
   },
@@ -94,10 +94,10 @@ const integrations = [
   },
 ]
 
-// Genomic frontier cards — icon + colored border/tint, with hover-reveal detail.
+// Genomic frontier cards — `icon` is a PNG in /public/icon; colored border/tint; hover-reveal detail.
 const frontier = [
   {
-    icon: Dna,
+    icon: "/icon/Clinical Genomics.png",
     title: "Clinical Genomics",
     description: "Diagnostic-grade pipelines for hospitals and clinics.",
     extra: "Validated workflows, curated knowledge bases and reporting templates tailored to this domain.",
@@ -105,42 +105,42 @@ const frontier = [
     tint: "from-indigo-500/20",
   },
   {
-    icon: Microscope,
+    icon: "/icon/Cancer Genomics.png",
     title: "Cancer Genomics",
     description: "Somatic, germline and tumor-normal in one workflow.",
-    extra: "Validated workflows, curated knowledge bases and reporting templates tailored to this domain.",
+    extra: "Comprehensive oncology pipelines with integrated variant calling, annotation and clinical reporting.",
     border: "border-lime-500/40",
     tint: "from-lime-500/20",
   },
   {
-    icon: Activity,
+    icon: "/icon/Rare Disease Diagnostics.png",
     title: "Rare Disease Diagnostics",
     description: "Accelerate the diagnostic odyssey with AI triage.",
-    extra: "Validated workflows, curated knowledge bases and reporting templates tailored to this domain.",
+    extra: "AI-assisted prioritization and interpretation to shorten time-to-diagnosis for rare genetic disorders.",
     border: "border-blue-500/40",
     tint: "from-blue-500/20",
   },
   {
-    icon: Baby,
+    icon: "/icon/Reproductive Health.png",
     title: "Reproductive Health",
     description: "Carrier screening, NIPT and preimplantation workflows.",
-    extra: "Validated workflows, curated knowledge bases and reporting templates tailored to this domain.",
+    extra: "End-to-end solutions supporting fertility clinics and prenatal genetic testing programs.",
     border: "border-amber-400/40",
     tint: "from-amber-400/20",
   },
   {
-    icon: Pill,
+    icon: "/icon/Pharmacogenomics.png",
     title: "Pharmacogenomics",
     description: "Personalize therapy with PGx panels and reporting.",
-    extra: "Validated workflows, curated knowledge bases and reporting templates tailored to this domain.",
+    extra: "Actionable PGx insights that guide drug selection and dosing for safer, more effective treatment.",
     border: "border-orange-500/40",
     tint: "from-orange-500/20",
   },
   {
-    icon: Bug,
+    icon: "/icon/Infectious Disease.png",
     title: "Infectious Disease",
     description: "Pathogen ID, AMR profiling and outbreak surveillance.",
-    extra: "Validated workflows, curated knowledge bases and reporting templates tailored to this domain.",
+    extra: "Rapid detection and antimicrobial resistance analysis for clinical and public health applications.",
     border: "border-emerald-500/40",
     tint: "from-emerald-500/20",
   },
@@ -177,7 +177,7 @@ export default function TwinePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium text-white md:text-xl"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               What we do
             </motion.p>
@@ -192,7 +192,7 @@ export default function TwinePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Transform Genomic Data Into
               <br />
@@ -203,9 +203,10 @@ export default function TwinePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
-              TWINE combines AI, machine learning and advanced bioinformatics to convert sequencing data into actionable clinical and research insights.
+              TWINE combines AI, machine learning, and advanced bioinformatics to turn NGS and multi-omics data into actionable clinical and research insights.
+
             </motion.p>
 
             <motion.div
@@ -215,12 +216,12 @@ export default function TwinePage() {
               className="mt-10"
             >
               <a
-                href="https://bencoshealth.in/twine-microsite.html"
+                href="/twine-microsite"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg hover:shadow-green-500/30"
               >
-                Explore Twine
+                Explore TWINE
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </motion.div>
@@ -239,7 +240,7 @@ export default function TwinePage() {
               transition={{ duration: 0.6 }}
               className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
             >
-              One platform for the entire genomic stack
+              One Platform For The Entire Genomic Stack
             </motion.h2>
 
             {/* Arrow controls */}
@@ -350,7 +351,7 @@ export default function TwinePage() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
           >
-            Integrated Within the Bencos Ecosystem
+            Integrated Within The Bencos Ecosystem
           </motion.h2>
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -369,11 +370,11 @@ export default function TwinePage() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6">
-                  <h3 className="text-xl font-semibold text-white md:text-2xl">
+                <div className="absolute inset-x-0 bottom-0 p-6 pb-12">
+                  <h3 className="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-[#4ADE76] md:text-2xl">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/80">
+                  <p className="mt-3 text-sm leading-relaxed text-white/80">
                     {item.description}
                   </p>
                 </div>
@@ -393,12 +394,11 @@ export default function TwinePage() {
             transition={{ duration: 0.6 }}
             className="text-3xl font-semibold leading-tight text-white md:text-4xl"
           >
-            Built for every genomic frontier
+            Built For Every Genomic Frontier
           </motion.h2>
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
             {frontier.map((item, index) => {
-              const Icon = item.icon
               return (
                 <motion.div
                   key={item.title}
@@ -412,8 +412,13 @@ export default function TwinePage() {
                     className={`pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t ${item.tint} to-transparent`}
                   />
                   <div className="relative">
-                    <Icon className="h-7 w-7 text-white/90" />
-                    <h3 className="mt-5 text-xl font-semibold text-white md:text-2xl">
+                    <img
+                      src={item.icon}
+                      alt=""
+                      aria-hidden="true"
+                      className="h-7 w-7 object-contain"
+                    />
+                    <h3 className="mt-5 text-xl group-hover:text-[#4ADE76] font-semibold text-white md:text-2xl">
                       {item.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-white/60">
@@ -440,13 +445,13 @@ export default function TwinePage() {
 
       {/* ======================= CLOSING CTA ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
+            className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl"
           >
             Ready To Unlock Genomic
             <br />
@@ -457,7 +462,7 @@ export default function TwinePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-muted-foreground leading-relaxed"
+            className="mt-8 text-muted-foreground leading-relaxed"
           >
             Join the leading hospitals, research institutes and pharma teams already building
             on TWINE.

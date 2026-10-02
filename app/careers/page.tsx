@@ -6,6 +6,11 @@ import { ArrowRight, X, Upload } from "lucide-react"
 
 // Get a free access key at https://web3forms.com and paste it here.
 const WEB3FORMS_ACCESS_KEY = "ea96e555-0fac-4c10-928a-bb399071be8b"
+
+// Google Apps Script "Web app URL" (ends in /exec) that saves CVs to Google Drive and logs each
+// application in a Google Sheet. Setup steps: scripts/careers-apps-script.gs
+const CAREERS_UPLOAD_URL =
+  "https://script.google.com/macros/s/AKfycbxN1mWV-zAeeQXRd3DUOhXtvX4GNQeA0-444sn9E8OiyaBRCDIg3FWh2fTleeGLa5Vnmg/exec"
 const HR_EMAIL = "hr@bencoslife.com"
 
 // Open positions — add/edit entries and the list reflows automatically.
@@ -21,10 +26,10 @@ const openings = [
 ]
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 245.png"
-const PEOPLE_IMAGE = "/images/image 246.png"
-const DISCIPLINES_IMAGE = "/images/image 255.png"
-const JOURNEY_IMAGE = "/images/image 256.png"
+const HERO_IMAGE = "/images/image 245.webp"
+const PEOPLE_IMAGE = "/images/image 246.webp"
+const DISCIPLINES_IMAGE = "/images/image 255.webp"
+const JOURNEY_IMAGE = "/images/image 256.webp"
 
 // Culture — alternating rows; even index = image left, odd = image right.
 const culture = [
@@ -32,28 +37,28 @@ const culture = [
     title: "Innovation",
     description:
       "We encourage bold ideas that accelerate scientific discovery and technological innovation.",
-    image: "/images/image 247.png",
+    image: "/images/image 247.webp",
     imageAlt: "Two scientists reviewing work together on a laptop",
   },
   {
     title: "Collaboration",
     description:
       "Our multidisciplinary teams work together across life sciences, healthcare, AI, and business.",
-    image: "/images/image 248.png",
+    image: "/images/image 248.webp",
     imageAlt: "A diverse team collaborating around a whiteboard",
   },
   {
     title: "Learning & Growth",
     description:
       "We invest in continuous learning, mentorship, professional development, and knowledge sharing.",
-    image: "/images/image 249.png",
+    image: "/images/image 249.webp",
     imageAlt: "A mentor and colleague talking in an office",
   },
   {
     title: "Global Impact",
     description:
       "Every project contributes to improving healthcare, advancing research, and creating meaningful impact worldwide.",
-    image: "/images/image 250.png",
+    image: "/images/image 250.webp",
     imageAlt: "A team on a global video call in a meeting room",
   },
 ]
@@ -82,42 +87,95 @@ const disciplines = [
   },
 ]
 
+const MAX_CV_BYTES = 5 * 1024 * 1024
+
+/** Reads a file as base64 (without the "data:...;base64," prefix). */
+function fileToBase64(file: File) {
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(String(reader.result).split(",")[1] ?? "")
+    reader.onerror = () => reject(reader.error)
+    reader.readAsDataURL(file)
+  })
+}
+
 export default function CareersPage() {
   const [applyJob, setApplyJob] = useState<string | null>(null)
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
-  const [fileName, setFileName] = useState<string>("")
+  const [fileName, setFileName] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
 
   const closeModal = () => {
     setApplyJob(null)
     setStatus("idle")
     setFileName("")
+    setErrorMessage("")
+  }
+
+  const fail = (message = "") => {
+    setErrorMessage(message)
+    setStatus("error")
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
-
-    // Web3Forms attachments have a size ceiling — reject early with a clear message.
     const cv = formData.get("cv")
-    if (cv instanceof File && cv.size > 5 * 1024 * 1024) {
-      setStatus("error")
-      return
+    if (!(cv instanceof File) || cv.size === 0) return fail("Please upload your CV as a PDF,")
+    if (cv.size > MAX_CV_BYTES) return fail("Your CV is larger than 5 MB. Please upload a smaller PDF,")
+
+    const applicant = {
+      position: applyJob ?? "",
+      name: String(formData.get("name") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      phone: String(formData.get("contact") ?? ""),
     }
 
     setStatus("submitting")
-    formData.append("access_key", WEB3FORMS_ACCESS_KEY)
-    formData.append("subject", `Job Application: ${applyJob ?? ""}`)
-    formData.append("from_name", "Bencos Careers")
-    formData.append("position", applyJob ?? "")
+    setErrorMessage("")
     try {
+      // 1) Save the CV to the Google Drive folder and log a row in the Google Sheet (like Google Forms).
+      let cvUrl = ""
+      if (CAREERS_UPLOAD_URL) {
+        const res = await fetch(CAREERS_UPLOAD_URL, {
+          method: "POST",
+          // text/plain keeps this a "simple" request so Apps Script accepts it without a CORS preflight.
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify({
+            ...applicant,
+            fileName: cv.name,
+            mimeType: cv.type || "application/pdf",
+            fileData: await fileToBase64(cv),
+          }),
+        })
+        const saved = (await res.json()) as { success: boolean; cvUrl?: string; message?: string }
+        if (!saved.success || !saved.cvUrl) return fail("We couldn't upload your CV. Please try again,")
+        cvUrl = saved.cvUrl
+      }
+
+      // 2) Email the application (with the Drive link) to the admin via Web3Forms.
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Job Application: ${applicant.position} — ${applicant.name}`,
+          from_name: "Bencos Careers",
+          // Lets the admin hit "Reply" to answer the applicant directly.
+          replyto: applicant.email,
+          // Keys below are shown as the field labels in the admin's Web3Forms email.
+          "Position": applicant.position,
+          "Name": applicant.name,
+          "Email": applicant.email,
+          "Phone Number": applicant.phone,
+          "CV (Google Drive)": cvUrl || `Not uploaded (file: ${cv.name})`,
+        }),
       })
       const data = await res.json()
-      setStatus(data.success ? "success" : "error")
+      if (data.success) setStatus("success")
+      else fail()
     } catch {
-      setStatus("error")
+      fail()
     }
   }
 
@@ -143,7 +201,7 @@ export default function CareersPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium uppercase tracking-[0.15em] text-white"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               Careers
             </motion.p>
@@ -158,10 +216,10 @@ export default function CareersPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
-              Build the Future With
-              <br />
+              Build the Future <br/>With
+              
               Us.
             </motion.h1>
 
@@ -169,7 +227,7 @@ export default function CareersPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
              Join a team driving innovation across life sciences, healthcare, and technology.
             </motion.p>
@@ -196,16 +254,16 @@ export default function CareersPage() {
             transition={{ duration: 0.6, delay: 0.05 }}
             className="mt-2 text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
           >
-            Innovation begins with people
+            Innovation Begins With People
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            At Bencos, we foster a collaborative environment where scientific excellence, creativity, and continuous learning empower individuals to solve meaningful challenges across research, healthcare, and technology.
+            At Bencos, we foster a collaborative environment where scientific excellence, creativity, and continuous learning empower<br/> individuals to solve meaningful challenges across research, healthcare, and technology.
           </motion.p>
         </div>
 
@@ -447,13 +505,14 @@ export default function CareersPage() {
                     <input
                       type="tel"
                       name="contact"
+                      required
                       className="mt-2 w-full rounded-md border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent"
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-foreground">
-                      Upload CV <span className="text-muted-foreground">(PDF)</span>
+                      Upload CV <span className="text-muted-foreground">(PDF, max 5&nbsp;MB)</span>
                     </label>
                     <div className="mt-3 flex flex-col items-center gap-3">
                       <label className="inline-flex cursor-pointer items-center gap-2 rounded-md border-2 border-accent px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-green-600/10">
@@ -464,7 +523,10 @@ export default function CareersPage() {
                           name="cv"
                           required
                           accept="application/pdf,.pdf"
-                          onChange={(e) => setFileName(e.target.files?.[0]?.name ?? "")}
+                          onChange={(e) => {
+                            setFileName(e.target.files?.[0]?.name ?? "")
+                            setErrorMessage("")
+                          }}
                           className="hidden"
                         />
                       </label>
@@ -473,8 +535,8 @@ export default function CareersPage() {
 
                   {status === "error" && (
                     <p className="text-center text-sm text-red-500">
-                      Something went wrong. Please ensure your CV is a PDF under 5&nbsp;MB,
-                      or email it directly to {HR_EMAIL}.
+                      {errorMessage || "Something went wrong. Please try again,"} or email your CV directly to{" "}
+                      {HR_EMAIL}.
                     </p>
                   )}
 

@@ -148,12 +148,10 @@ function Particles() {
   return (
     <points ref={particlesRef}>
       <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          count={200}
-          array={positions}
-          itemSize={3}
-        />
+        {/* R3F v9 requires the BufferAttribute constructor args. They derive
+            array, itemSize and count (600 / 3 = 200), so the separate props
+            those replaced are no longer needed. */}
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
       <pointsMaterial
         size={0.03}

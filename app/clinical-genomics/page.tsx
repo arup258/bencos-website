@@ -5,8 +5,8 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 343.png"
-const APPROACH_IMAGE = "/images/image 345.png"
+const HERO_IMAGE = "/images/image 343.webp"
+const APPROACH_IMAGE = "/images/image 345.webp"
 
 // Service cards — image with overlaid title/description.
 const services = [
@@ -17,12 +17,12 @@ const services = [
   },
   {
     title: "Oncology",
-    description: "Personalized Care Through Genomics.",
+    description: "Precision-Driven Solutions for Cancer Care.",
     image: "/images/image 347.png",
   },
   {
     title: "Pediatrics",
-    description: "Precision Oncology Solutions.",
+    description: "Advancing Child Health through Genomic Insights",
     image: "/images/image 348.png",
   },
   {
@@ -54,10 +54,10 @@ const applications = [
 
 // Technology & platforms — image top, title below; grid reflows automatically.
 const technology = [
-  { title: "Next-Generation Sequencing", image: "/images/image 357.png" },
-  { title: "Molecular Diagnostics", image: "/images/image 358.png" },
-  { title: "Clinical Bioinformatics", image: "/images/image 359.png" },
-  { title: "Quality Assurance", image: "/images/image 360.png" },
+  { title: "Next-Generation Sequencing", image: "/images/image 357.webp" },
+  { title: "Molecular Diagnostics", image: "/images/image 358.webp" },
+  { title: "Clinical Bioinformatics", image: "/images/image 359.webp" },
+  { title: "Quality Assurance", image: "/images/image 360.webp" },
 ]
 
 // Workflow — numbered steps; grid reflows automatically.
@@ -75,29 +75,29 @@ const whyChoose = [
   {
     title: "Clinical Expertise",
     description:
-      "Board-certified molecular pathologists, clinical geneticists, and laboratory scientists guide every case with rigor and empathy.",
-    image: "/images/image 365.png",
+      "Board-certified molecular pathologists, clinical geneticists, and\nlaboratory scientists guide every case with rigor and empathy.",
+    image: "/images/image 365.webp",
     imageAlt: "Clinicians reviewing diagnostic results",
   },
   {
     title: "Advanced Laboratory Infrastructure",
     description:
-      "State-of-the-art sequencing platforms and diagnostic instruments deliver clinically actionable results at scale.",
-    image: "/images/image 366.png",
+      "State-of-the-art sequencing platforms and diagnostic instruments\ndeliver clinically actionable results at scale.",
+    image: "/images/image 366.webp",
     imageAlt: "An accredited clinical genomics laboratory",
   },
   {
     title: "Reliable Diagnostics",
     description:
-      "Multi-tier quality controls, independent review, and internationally recognized standards on every clinical report.",
-    image: "/images/image 367.png",
+      "Multi-tier quality controls, independent review, and\ninternationally recognized standards on every clinical report.",
+    image: "/images/image 367.webp",
     imageAlt: "A specialist interpreting genomic variants",
   },
   {
     title: "Precision Healthcare",
     description:
-      "Genomic insights woven directly into clinical decision-making, so patients receive care tailored to their biology.",
-    image: "/images/image 368.png",
+      "Genomic insights woven directly into clinical decision-making, so\npatients receive care tailored to their biology.",
+    image: "/images/image 368.webp",
     imageAlt: "A clinical team collaborating in a meeting room",
   },
 ]
@@ -125,7 +125,7 @@ export default function ClinicalGenomicsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium uppercase tracking-[0.15em] text-white"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               Services
             </motion.p>
@@ -140,7 +140,7 @@ export default function ClinicalGenomicsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Precision Care 
               <br />
@@ -151,7 +151,7 @@ export default function ClinicalGenomicsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Delivering advanced genomic testing and molecular diagnostics to support early disease detection, personalized treatment, and precision healthcare
             </motion.p>
@@ -200,9 +200,9 @@ export default function ClinicalGenomicsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            Clinical genomics enables healthcare professionals to understand the genetic basis of disease, improve diagnostic accuracy, and deliver personalized treatment strategies for better patient outcomes.
+            Clinical genomics enables healthcare professionals to understand the genetic basis of disease, improve diagnostic accuracy,<br/> and deliver personalized treatment strategies for better patient outcomes.
           </motion.p>
         </div>
 
@@ -247,9 +247,9 @@ export default function ClinicalGenomicsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            Supporting hospitals, healthcare providers, and diagnostic laboratories through advanced genomic technologies for improved patient care.
+            Supporting hospitals, healthcare providers, and diagnostic laboratories through advanced genomic technologies for improved <br/>patient care.
           </motion.p>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -269,10 +269,10 @@ export default function ClinicalGenomicsPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
-                  <h3 className="text-xl font-semibold text-white md:text-2xl">
+                  <h3 className="text-xl group-hover:text-[#4ADE76]  font-semibold text-white md:text-2xl">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/80">
+                  <p className="mt-2 pb-16 text-sm leading-relaxed text-white/80">
                     {item.description}
                   </p>
                 </div>
@@ -357,9 +357,9 @@ export default function ClinicalGenomicsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            Our clinical laboratories utilize internationally recognized technologies to ensure accurate, reliable, and clinically actionable genomic results.
+            Our clinical laboratories utilize internationally recognized technologies to ensure accurate, reliable, and clinically actionable<br/> genomic results.
           </motion.p>
 
           <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
@@ -494,7 +494,7 @@ export default function ClinicalGenomicsPage() {
                     <h3 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
                       {item.title}
                     </h3>
-                    <p className="mt-6 max-w-md text-muted-foreground leading-relaxed">
+                    <p className="mt-6 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>

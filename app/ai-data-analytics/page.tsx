@@ -5,101 +5,41 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 372.png"
-const APPROACH_IMAGE = "/images/image 373.png"
+const HERO_IMAGE = "/images/image 610.webp"
 
-// Service cards — image with overlaid title/description.
-const services = [
-  {
-    title: "Precision Medicine",
-    description: "Personalized treatment insights guided by AI.",
-    image: "/images/image 374.png",
-  },
-  {
-    title: "Cancer Research",
-    description: "Biomarker discovery and tumor profiling.",
-    image: "/images/image 375.png",
-  },
-  {
-    title: "Rare Disease Research",
-    description: "Genomic pattern discovery for rare conditions.",
-    image: "/images/image 376.png",
-  },
-  {
-    title: "Drug Discovery",
-    description: "AI-accelerated therapeutic development.",
-    image: "/images/image 377.png",
-  },
-  {
-    title: "Clinical Research",
-    description: "Trial analytics and outcome interpretation.",
-    image: "/images/image 378.png",
-  },
-  {
-    title: "Population Health Analytics",
-    description: "Large-scale healthcare data understanding.",
-    image: "/images/image 379.png",
-  },
-]
 
-// Applications — image top, title below; grid reflows automatically.
-const applications = [
-  { title: "Machine Learning Models", image: "/images/image 380.png" },
-  { title: "Predictive Analytics", image: "/images/image 381.png" },
-  { title: "Genomic AI", image: "/images/image 382.png" },
-  { title: "Data Visualization", image: "/images/image 383.png" },
-  { title: "Clinical Data Analytics", image: "/images/image 384.png" },
-  { title: "Decision Support Systems", image: "/images/image 385.png" },
-]
 
-// Technology & platforms — image top, title below; grid reflows automatically.
-const technology = [
-  { title: "Artificial Intelligence", image: "/images/image 391.png" },
-  { title: "High Performance Computing", image: "/images/image 386.png" },
-  { title: "Cloud-Based Analytics", image: "/images/image 387.png" },
-  { title: "Interactive Scientific Dashboards", image: "/images/image 388.png" },
-]
 
-// Workflow — numbered steps; grid reflows automatically.
-const workflow = [
-  { step: "01", title: "Data Collection", image: "/images/image 389.png" },
-  { step: "02", title: "Data Preparation", image: "/images/image 390.png" },
-  { step: "03", title: "Machine Learning Analysis", image: "/images/image 391.png" },
-  { step: "04", title: "Pattern Recognition", image: "/images/image 383.png" },
-  { step: "05", title: "Scientific Validation", image: "/images/image 393.png" },
-  { step: "06", title: "Actionable Insights", image: "/images/image 397.png" },
-]
+
+
 
 // Why choose Bencos — alternating rows; even index = image left, odd = image right.
 const whyChoose = [
   {
-    title: "AI-Driven Scientific Expertise",
+    title: "Plasma AI",
     description:
-      "Board-certified molecular pathologists, clinical geneticists, and laboratory scientists guide every case with rigor and empathy.",
-    image: "/images/image 398.png",
+      "Plasma AI uses advanced artificial intelligence to support genomics, precision medicine, biomarker discovery, clinical decision support, and healthcare innovation.",
+    image: "/images/image 612.webp",
     imageAlt: "Data scientists reviewing model results",
+    href: "https://www.myneuronworld.com/plasma",
   },
   {
-    title: "Advanced Data Infrastructure",
+    title: "Resilience AI",
     description:
-      "High-performance computing built for the demands of modern genomics and biomedical research.",
-    image: "/images/image 395.png",
+      "Resilience AI empowers organizations with intelligent climate risk analysis, ESG monitoring, business continuity planning, sustainability analytics, and enterprise resilience solutions.",
+    image: "/images/image 613.webp",
     imageAlt: "A cloud computing and analytics environment",
+    href: "/climate-resilience",
   },
   {
-    title: "Accurate Predictive Analytics",
+    title: "Genomics Intelligence AI",
     description:
-      "Multi-tier quality controls, independent review, and internationally recognized standards on every clinical report.",
-    image: "/images/image 396.png",
+      "Genomics Intelligence AI accelerates genomic interpretation, NGS analysis, clinical reporting, and biological data management using explainable artificial intelligence.",
+    image: "/images/image 614.webp",
     imageAlt: "An explainable AI dashboard on screen",
+    href: "/clinical-genomics",
   },
-  {
-    title: "Trusted Research Partnership",
-    description:
-      "Long-term collaboration with academic, clinical, and industry partners across the discovery lifecycle.",
-    image: "/images/image 399.png",
-    imageAlt: "A team collaborating in a meeting room",
-  },
+  
 ]
 
 export default function AiDataAnalyticsPage() {
@@ -125,9 +65,9 @@ export default function AiDataAnalyticsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium uppercase tracking-[0.15em] text-white"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
-              Services
+              Who we are
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
@@ -140,9 +80,9 @@ export default function AiDataAnalyticsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
-              AI That Powers Scientific Discovery
+             Bencos AI
               <br />
               
             </motion.h1>
@@ -151,9 +91,9 @@ export default function AiDataAnalyticsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
-              Leverage artificial intelligence, machine learning, and advanced analytics to transform complex biological and clinical data into actionable scientific insights that accelerate research and innovation
+              Enterprise Artificial Intelligence for Healthcare, Genomics, Climate Resilience, and Intelligent Business Transformation.
             </motion.p>
 
             <motion.div
@@ -166,7 +106,7 @@ export default function AiDataAnalyticsPage() {
                 href="/contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg hover:shadow-green-500/30"
               >
-                Contact Our Experts
+               Talk to Us 
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </motion.div>
@@ -174,265 +114,41 @@ export default function AiDataAnalyticsPage() {
         </div>
       </section>
 
-      {/* ======================= APPROACH ======================= */}
+      {/* ======================= REAL IMPACT ======================= */}
       <section className="bg-background py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-sm font-medium text-muted-foreground"
-          >
-            Overview
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-2 text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
-          >
-           Smarter science through artificial intelligence
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
-          >
-           Bencos combines artificial intelligence, computational biology, and data science to improve research accuracy, automate complex workflows, identify hidden biological patterns, and support faster scientific decision-making.
-          </motion.p>
-        </div>
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            {/* Left: heading + copy */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <h2 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
+                Artificial Intelligence that Creates Real Impact
+              </h2>
+              <p className="mt-6 max-w-xl text-muted-foreground leading-relaxed">
+                Bencos AI develops intelligent solutions that help organizations accelerate
+                research, improve healthcare, strengthen climate resilience, automate enterprise
+                workflows, and transform complex data into smarter decisions.
+              </p>
+            </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative mt-10 aspect-[4/3] w-full overflow-hidden bg-neutral-900 sm:aspect-[16/9] lg:aspect-[21/9]"
-        >
-          <img
-            src={APPROACH_IMAGE}
-            alt="Data scientists analysing AI model outputs on large screens"
-            className="h-full w-full object-cover"
-          />
-        </motion.div>
-      </section>
-
-      {/* ======================= OUR SERVICES (GRID) ======================= */}
-      <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-sm font-medium text-muted-foreground"
-          >
-            Applications
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-2 text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
-          >
-            Applications across life sciences
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
-          >
-            Our AI-driven solutions empower researchers, clinicians, and healthcare organizations to accelerate discovery, improve diagnostics, and support precision medicine.
-          </motion.p>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-                className="group relative aspect-[4/5] overflow-hidden rounded-xl bg-neutral-900"
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6">
-                  <h3 className="text-xl font-semibold text-white md:text-2xl">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/80">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ======================= APPLICATIONS (GRID) ======================= */}
-      <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-sm font-medium text-muted-foreground"
-          >
-            Capabilities
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-2 text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
-          >
-            Our AI & Data Analytics services.
-
-          </motion.h2>
-          
-
-          <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-4">
-            {applications.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (index % 4) * 0.08 }}
-                className="group"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-900">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="mt-4 text-lg font-medium text-foreground md:text-xl">
-                  {item.title}
-                </h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ======================= TECHNOLOGY & PLATFORMS (GRID) ======================= */}
-      <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-sm font-medium text-muted-foreground"
-          >
-            Technology
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-2 text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
-          >
-            Advanced Diagnostic Technologies
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
-          >
-           Our clinical laboratories utilize internationally recognized technologies to ensure accurate, reliable, and clinically actionable genomic results.
-          </motion.p>
-
-          <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
-            {technology.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (index % 2) * 0.1 }}
-                className="group"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-neutral-900">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-foreground md:text-xl">
-                  {item.title}
-                </h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ======================= OUR WORKFLOW (STEPS) ======================= */}
-      <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-sm font-medium text-muted-foreground"
-          >
-            Workflow
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-2 text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
-          >
-            Our Analytical Workflow
-          </motion.h2>
-          
-
-          <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
-            {workflow.map((item, index) => (
-              <motion.div
-                key={item.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (index % 6) * 0.06 }}
-                className="group"
-              >
-                <div className="relative aspect-square overflow-hidden rounded-xl bg-neutral-900">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <p className="mt-3 text-xs font-medium text-muted-foreground">{item.step}</p>
-                <h3 className="mt-1 text-sm font-medium text-foreground">{item.title}</h3>
-              </motion.div>
-            ))}
+            {/* Right: image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-900"
+            >
+              <img
+                src="/images/image 611.webp"
+                alt="Bencos AI operations center with data scientists at work"
+                className="h-full w-full object-cover"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -447,7 +163,7 @@ export default function AiDataAnalyticsPage() {
             transition={{ duration: 0.5 }}
             className="text-sm font-medium text-muted-foreground"
           >
-            Why Bencos
+           Our AI Ecosystem
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -495,9 +211,16 @@ export default function AiDataAnalyticsPage() {
                     <h3 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
                       {item.title}
                     </h3>
-                    <p className="mt-6 max-w-md text-muted-foreground leading-relaxed">
+                    <p className="mt-6 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
+                    <Link
+                      href={item.href}
+                      className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-green-600"
+                    >
+                      Read more
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
                   </motion.div>
                 </div>
               )
@@ -508,7 +231,7 @@ export default function AiDataAnalyticsPage() {
 
       {/* ======================= CLOSING CTA ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -516,7 +239,7 @@ export default function AiDataAnalyticsPage() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl text-balance"
           >
-            Where Science Meets Intelligence.
+            Shape the Future with Artificial Intelligence
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -525,7 +248,7 @@ export default function AiDataAnalyticsPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-4 text-sm text-muted-foreground md:text-base"
           >
-            Partner with Bencos to unlock the power of artificial intelligence and advanced data analytics for genomics, healthcare, and scientific research.
+            Partner with Bencos AI to accelerate innovation through intelligent solutions built<br/>for healthcare, research, sustainability, and enterprise transformation.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

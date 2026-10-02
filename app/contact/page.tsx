@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Mail, Phone, ArrowRight, CheckCircle2 } from "lucide-react"
 
 // Hero image lives in /public/images — swap the src below to change it.
-const HERO_IMAGE = "/images/image 117.png"
+const HERO_IMAGE = "/images/image 117.webp"
 
 // Get a free access key at https://web3forms.com and paste it here.
 const WEB3FORMS_ACCESS_KEY = "ea96e555-0fac-4c10-928a-bb399071be8b"
@@ -15,13 +15,13 @@ const contactInfo = [
     icon: Mail,
     title: "Email",
     value: "support@bencoslife.com",
-    href: "support@bencoslife.com",
+    href: "mailto:support@bencoslife.com",
   },
   {
     icon: Phone,
     title: "Phone",
     value: "+91 98754 51675",
-    href: "tel:+9198754 51675",
+    href: "tel:+919875451675",
   },
 ]
 
@@ -158,7 +158,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium uppercase tracking-[0.15em] text-white"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               Contact
             </motion.p>
@@ -173,18 +173,18 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
-              Let's build 
+              Let's Build 
               <br />
-              the future together
+              the Future Together
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Whether you're exploring scientific partnerships, healthcare collaborations, genomics solutions, or innovative technology platforms, our experts are ready to help.
             </motion.p>
@@ -204,9 +204,9 @@ export default function ContactPage() {
               className="lg:col-span-2"
             >
               <h2 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl">
-                Get in touch
+                Get in Touch
               </h2>
-              <p className="mt-6 max-w-md text-muted-foreground leading-relaxed">
+              <p className="mt-6 max-w-6xl text-muted-foreground leading-relaxed">
                 Connect with our multidisciplinary team to discuss research collaborations,
                 genomics services, healthcare innovation, technology platforms, scientific
                 consulting, or business partnerships.
@@ -238,7 +238,7 @@ export default function ContactPage() {
                       href={item.href}
                       className="flex items-center gap-3 text-sm text-foreground transition-opacity hover:opacity-70"
                     >
-                      <Icon className="h-4 w-4 shrink-0 text-accent" />
+                      <Icon className="h-4 w-4 shrink-0 text-[#4ADE76]" />
                       {item.value}
                     </a>
                   )
@@ -358,7 +358,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={sending}
-                    className="group mt-8 inline-flex items-center gap-3 rounded-sm bg-accent px-6 py-3.5 text-sm font-medium text-primary transition-all hover:bg-green-600/90 disabled:opacity-60"
+                    className="group mt-8 inline-flex items-center gap-3 rounded-sm bg-[#4ADE76] px-6 py-3.5 text-sm font-medium text-primary transition-all hover:bg-green-600/90 disabled:opacity-60"
                   >
                     {sending ? "Sending…" : "Send message"}
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

@@ -4,12 +4,12 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/hero-lab-1.png"
+const HERO_IMAGE = "/images/hero-lab-1.webp"
 const FUTURE_IMAGE = "/images/image 70(1).png"
 const PURPOSE_IMAGE = "/images/image 77.png"
-const VISION_IMAGE = "/images/image 27.png"
-const COMMITMENT_IMAGE = "/images/image 78.png"
-const DISCOVERIES_IMAGE = "/images/image 79.png"
+const VISION_IMAGE = "/images/image 27.webp"
+const COMMITMENT_IMAGE = "/images/image 78.webp"
+const DISCOVERIES_IMAGE = "/images/image 79.webp"
 
 const visionPoints = [
   "Lead the future of genomics and precision medicine",
@@ -42,7 +42,7 @@ export default function OurAspirationPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium text-white md:text-xl"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               Who we are
             </motion.p>
@@ -57,7 +57,7 @@ export default function OurAspirationPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Our Aspiration
             </motion.h1>
@@ -66,7 +66,7 @@ export default function OurAspirationPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               At Bencos Research Solutions, we advance the future of life sciences through innovation, genomics, AI, and precision healthcare.
             </motion.p>
@@ -91,10 +91,8 @@ export default function OurAspirationPage() {
                 of Life Sciences
               </h2>
 
-              <p className="mt-8 max-w-md text-muted-foreground leading-relaxed">
-                We aspire to become a globally trusted life sciences company, recognised for scientific excellence, innovation, and integrity. 
-
-                By combining biology, technology, and data-driven research, we empower researchers and clinicians to advance precision medicine and accelerate discoveries that improve human health
+              <p className="mt-8 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
+                {"We aspire to become a globally trusted life sciences company,\nrecognised for scientific excellence, innovation, and integrity.\nBy combining biology, technology, and data-driven research, we\nempower researchers and clinicians to advance precision medicine\nand accelerate discoveries that improve human health"}
               </p>
             </motion.div>
 
@@ -118,7 +116,7 @@ export default function OurAspirationPage() {
 
       {/* ======================= PURPOSE STATEMENT ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -214,8 +212,8 @@ export default function OurAspirationPage() {
                 Drives Us Forward
               </h2>
 
-              <p className="mt-8 max-w-md text-muted-foreground leading-relaxed">
-                Continuous innovation drives our people, platforms, and partnerships to shape the future of science.
+              <p className="mt-8  text-muted-foreground leading-relaxed">
+                Continuous innovation drives our people, platforms, and <br/>partnerships to shape the future of science.
               </p>
              
             </motion.div>
@@ -251,7 +249,7 @@ export default function OurAspirationPage() {
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[480px] max-w-7xl items-center px-4 py-20 lg:min-h-[560px] lg:px-8">
-          <div className="max-w-xl">
+          <div className="max-w-3xl">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -266,9 +264,9 @@ export default function OurAspirationPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-6 max-w-lg text-sm leading-relaxed text-white/85 md:text-base"
+              className="mt-6 whitespace-pre-line text-sm leading-relaxed text-white/85 md:text-base"
             >
-              Bencos is committed to advancing research and innovation, transforming ideas into discoveries and discoveries into better healthcare for the future.
+              {"Bencos is committed to advancing research and innovation, transforming ideas into\ndiscoveries and discoveries into better healthcare for the future."}
             </motion.p>
           </div>
         </div>

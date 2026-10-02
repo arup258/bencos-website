@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
+
+
 
 :root {
   --background: #FFFFFF;
@@ -130,4 +133,71 @@
     overflow-x: hidden;
     max-width: 100%;
   }
+}
+
+/* --- Google Translate engine (driven by components/language-switcher.tsx) ---
+   The stock widget injects a top banner iframe and pushes <body> down by its
+   height. We drive translation from our own header dropdown, so hide all of
+   the vendor chrome and keep the layout where it was. */
+iframe.skiptranslate,
+.goog-te-banner-frame,
+.goog-te-gadget-icon,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+body {
+  /* Google sets `top: 40px` inline on <body> to make room for its banner. */
+  top: 0 !important;
+}
+
+/* Translated runs get a highlight box by default — unwanted on a dark theme. */
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Keep the widget's own mount point out of the visual flow entirely. */
+#google_translate_element {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* --- Typography for translated pages -------------------------------------
+   Machine-translated copy is a different length and shape from the English it
+   replaces: Japanese and Korean have no spaces, German and Finnish build long
+   compounds.
+
+   These rules hook on Google's own `translated-ltr`/`translated-rtl` class,
+   which it stamps on <html> the moment a translation is applied, and on our
+   `lang` attribute as a backstop. Relying on `lang` alone lost a race against
+   Google's script. Untranslated English pages match neither, so they render
+   exactly as before. */
+
+:is(html.translated-ltr, html.translated-rtl, html:not([lang="en"])) {
+  /* Long compounds (German "Genomforschungsloesungen") must wrap rather than
+     push out of their card. */
+  overflow-wrap: break-word;
+
+  /* Kinsoku shori: Japanese and Korean may break between most characters, but
+     never so that a line starts with a prolonged sound mark, small kana or
+     closing punctuation. The property only affects CJK text, so it is inert
+     for the Latin-script languages and needs no per-language selector. */
+  line-break: strict;
+}
+
+:is(html.translated-ltr, html.translated-rtl, html:not([lang="en"]))
+  :is(h1, h2, h3, h4) {
+  /* Spread a heading evenly over its lines instead of stranding one or two
+     characters alone on the last line. */
+  text-wrap: balance;
+}
+
+:is(html.translated-ltr, html.translated-rtl, html:not([lang="en"])) p {
+  text-wrap: pretty;
 }

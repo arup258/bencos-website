@@ -3,14 +3,25 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-import { Header } from '@/components/header'
-import { Footer } from '@/components/footer'
+import { SiteChrome } from '@/components/site-chrome'
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: '--font-poppins',
 });
+
+/** Google Tag Manager container for the site. */
+const GTM_ID = 'GTM-NP7LWDVW'
+
+// Google's standard container snippet, verbatim apart from the ID. Rendered as
+// a plain inline <script> at the top of <head> so it ships in the server HTML
+// and starts loading before hydration, as Google's install guide asks.
+const gtmSnippet = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`
 
 export const metadata: Metadata = {
   title: 'Bencos Research Solutions | Genomics & Bioinformatics Partner',
@@ -35,10 +46,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.variable}>
+      <head>
+        {/* Google Tag Manager */}
+        <script dangerouslySetInnerHTML={{ __html: gtmSnippet }} />
+        {/* End Google Tag Manager */}
+      </head>
       <body className={`font-sans antialiased`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+        <SiteChrome>{children}</SiteChrome>
         <Analytics />
       </body>
     </html>

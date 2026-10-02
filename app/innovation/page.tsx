@@ -2,20 +2,21 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 101.png"
-const COMMITMENT_BANNER_IMAGE = "/images/image 94.png"
-const RESPONSIBLE_SCI_IMAGE = "/images/image 100.png"
-const APPROACH_IMAGE = "/images/image 98.png"
-const PURPOSE_IMAGE = "/images/image 95.png"
-const PILLARS_IMAGE = "/images/image 79.png"
-const COMMITMENT_IMAGE = "/images/image 78.png"
-const IMPACT_IMAGE = "/images/image 79.png"
-const DRIVING_IMAGE = "/images/image 78.png"
-const GROWING_IMAGE = "/images/image 96.png"
-const PURPOSE_VISION_IMAGE = "/images/image 97.png"
-const FUTURE_IMAGE = "/images/hero-lab-1.png"
+const HERO_IMAGE = "/images/image 101.webp"
+const COMMITMENT_BANNER_IMAGE = "/images/image 94.webp"
+const RESPONSIBLE_SCI_IMAGE = "/images/image 100.webp"
+const APPROACH_IMAGE = "/images/image 98.webp"
+const PURPOSE_IMAGE = "/images/image 95.webp"
+const PILLARS_IMAGE = "/images/image 79.webp"
+const COMMITMENT_IMAGE = "/images/image 78.webp"
+const IMPACT_IMAGE = "/images/image 79.webp"
+const DRIVING_IMAGE = "/images/image 78.webp"
+const GROWING_IMAGE = "/images/image 96.webp"
+const PURPOSE_VISION_IMAGE = "/images/image 97.webp"
+const FUTURE_IMAGE = "/images/hero-lab-1.webp"
 
 const pillars = [
   "Advance AI-powered research and discovery platforms",
@@ -48,9 +49,9 @@ export default function InnovationPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium text-white md:text-xl"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
-              Who we are
+              What we do
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
@@ -63,7 +64,7 @@ export default function InnovationPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium leading-[1.05] text-white md:text-6xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Building a Sustainable Future
               <br />
@@ -74,19 +75,35 @@ export default function InnovationPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-8 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               At Bencos, sustainability is more than a commitment — it is a responsibility.
               Through responsible science, ethical innovation, digital transformation, and
               collaborative partnerships, we strive to create long-term value for
               healthcare, research, businesses, and society.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="mt-10 flex flex-wrap items-center gap-4"
+            >
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg hover:shadow-green-500/30"
+              >
+                Talk to Our Expert
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* ======================= COMMITMENT STATEMENT ======================= */}
-      <section className="bg-background py-16 lg:py-20">
+      <section id="learn-more" className="scroll-mt-20 bg-background py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -95,7 +112,7 @@ export default function InnovationPage() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl"
           >
-            Our Commitment to Innovation
+            Our Commitment to Responsible Scientific Innovation
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -104,10 +121,8 @@ export default function InnovationPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-6 text-muted-foreground leading-relaxed"
           >
-            We believe that scientific innovation should create lasting value for people,
-            communities, and the environment. Every solution we develop is guided by
-            responsibility, integrity, and a vision for a healthier and more sustainable
-            future.
+            We believe that scientific innovation should create lasting value for people, communities, and the environment. Every solution we develop is guided by responsibility, integrity, and a clear vision for a healthier and more sustainable future in the life sciences and healthcare
+
           </motion.p>
         </div>
 
@@ -159,10 +174,7 @@ export default function InnovationPage() {
               </h2>
 
               <p className="mt-8 max-w-md text-muted-foreground leading-relaxed">
-                Bencos advances scientific discovery through responsible research practices,
-                ethical data management, and technologies designed to improve healthcare
-                while maintaining the highest standards of quality, transparency, and
-                integrity.
+                Bencos advances scientific discovery through responsible research practices, ethical data management, and technologies designed to improve healthcare outcomes while upholding the highest standards of quality, transparency, and integrity.
               </p>
             </motion.div>
           </div>
@@ -220,7 +232,7 @@ export default function InnovationPage() {
             transition={{ duration: 0.6 }}
             className="text-2xl font-semibold leading-snug text-foreground md:text-3xl text-balance"
           >
-           Empowering People and Communities
+           Innovation with Purpose
           </motion.h2>
 
            <motion.p
@@ -230,7 +242,8 @@ export default function InnovationPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-8 text-muted-foreground leading-relaxed"
           >
-            Sustainability extends beyond technology. We support scientific education, collaborative research, knowledge sharing, and community engagement to empower researchers, healthcare professionals, students, and future innovators.
+            Our vision is to build a future where scientific progress, technological innovation, and sustainable development work together to improve lives and create lasting global impact in healthcare and the life sciences.
+
           </motion.p>
         </div>
 

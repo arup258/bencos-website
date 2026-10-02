@@ -3,11 +3,11 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/hero-lab.png"
-const JOURNEY_IMAGE = "/images/twine-dna.png"                                                                                                                                                                                                                                             
-const SERVE_IMAGE = "/images/bencos-health.png"                                                                                                                                                                                                               
+const HERO_IMAGE = "/images/hero-lab.webp"
+const JOURNEY_IMAGE = "/images/twine-dna.webp"                                                                                                                                                                                                                                             
+const SERVE_IMAGE = "/images/bencos-health.webp"                                                                                                                                                                                                               
 const MILESTONES_IMAGE = "/images/hero-lab.jpg"                                                                                                                                                                                                                                             
-const DISCOVERIES_IMAGE = "/images/image 74.png"                                                                                                                                                                                                                                              
+const DISCOVERIES_IMAGE = "/images/image 74.webp"                                                                                                                                                                                                                                              
 
 const milestones = [                                                                                                                                              
   {                                                                                                                                             
@@ -53,7 +53,7 @@ const serveCards = [
 const commitments = [
   {
     title: "Our Global Commitment",
-    image: "/images/image 70.png",
+    image: "/images/image 70.webp",
     paragraphs: [
       "Our commitment extends beyond delivering research services. We strive to build long-term partnerships based on trust, scientific excellence, innovation and ethical responsibility.",
       "Every project reflects our dedication to improving healthcare through science and technology.",
@@ -61,16 +61,16 @@ const commitments = [
   },
   {
     title: "Driven by Research Excellence",
-    image: "/images/image 72.png",
+    image: "/images/image 72.webp",
     paragraphs: [
-      "Innovation is at the heart of everything we do. Our multidisciplinary expertise enables us to solve complex biological challenges while maintaining the highest standards of scientific integrity, quality and precision.",
+      "Innovation is at the heart of everything we do. Our multidisciplinary\nexpertise enables us to solve complex biological challenges while\nmaintaining the highest standards of scientific integrity, quality and\nprecision.",
     ],
   },
   {
     title: "Transforming Healthcare",
-    image: "/images/image 73.png",
+    image: "/images/image 73.webp",
     paragraphs: [
-      "Through our healthcare ecosystem and advanced scientific capabilities, we support the future of precision medicine, genomics, digital healthcare and personalized treatment approaches that improve patient care across the globe.",
+      "Through our healthcare ecosystem and advanced scientific\ncapabilities, we support the future of precision medicine, genomics,\ndigital healthcare and personalized treatment approaches that\nimprove patient care across the globe.",
     ],
   },
 ]
@@ -98,9 +98,9 @@ export default function WhoWeArePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium text-white md:text-xl"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
-              Who we are
+             Who we are
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
@@ -113,7 +113,7 @@ export default function WhoWeArePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Advancing Science.
               <br />
@@ -124,7 +124,7 @@ export default function WhoWeArePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Accelerating scientific discovery through genomics, bioinformatics, AI, and precision healthcare.
             </motion.p>
@@ -182,87 +182,7 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
-      {/* ======================= OUR JOURNEY (MILESTONES) ======================= */}
-      <section id="journey" className="relative overflow-hidden bg-background py-16 lg:py-20">
-        {/* Faint background image */}
-        <div className="pointer-events-none absolute inset-0">
-          <img
-            src={MILESTONES_IMAGE}
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full object-cover opacity-[0.06]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-xs font-semibold uppercase tracking-widest text-accent"
-          >
-            Our Journey
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl lg:text-5xl text-balance"
-          >
-            A decade of milestones in life sciences.
-          </motion.h2>
-
-          <div className="relative mt-20">
-            {/* Animated connecting line (desktop) */}
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.1, ease: "easeInOut" }}
-              className="absolute left-0 right-0 top-[7px] hidden h-px origin-left bg-border lg:block"
-            />
-
-            <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-5">
-              {milestones.map((milestone, index) => (
-                <div key={milestone.year} className="relative">
-                  {/* Dot */}
-                  <motion.div
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 18,
-                      delay: 0.3 + index * 0.15,
-                    }}
-                    className="relative z-10 h-3.5 w-3.5 rounded-full bg-accent ring-4 ring-background"
-                  />
-
-                  {/* Copy */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.4 + index * 0.15 }}
-                  >
-                    <p className="mt-5 text-sm font-semibold text-accent">{milestone.year}</p>
-                    <h3 className="mt-2 text-base font-semibold text-foreground">
-                      {milestone.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                      {milestone.description}
-                    </p>
-                  </motion.div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* ======================= WHO WE SERVE ======================= */}
       <section className="bg-background py-16 lg:py-20">
@@ -279,8 +199,8 @@ export default function WhoWeArePage() {
                 Who We Serve
               </h2>
 
-              <p className="mt-8 max-w-md text-muted-foreground leading-relaxed">
-               Bencos partners with leading organizations across the global life sciences and healthcare ecosystem—delivering scientific rigor, technical depth and operational excellence at every collaboration.
+              <p className="mt-8 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
+                {"Bencos partners with leading organizations across the global life\nsciences and healthcare ecosystem—delivering scientific rigor,\ntechnical depth and operational excellence at every\ncollaboration."}
               </p>
             </motion.div>
 
@@ -321,7 +241,7 @@ export default function WhoWeArePage() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-                <h3 className="absolute inset-x-0 bottom-0 p-5 text-lg font-medium text-white">
+                <h3 className="absolute inset-x-0 bottom-0 group-hover:text-[#4ADE76] pb-16 p-5 text-xl font-medium text-white">
                   {card.title}
                 </h3>
               </motion.div>
@@ -354,7 +274,7 @@ export default function WhoWeArePage() {
                     {item.paragraphs.map((paragraph, pIndex) => (
                       <p
                         key={paragraph}
-                        className={`${pIndex === 0 ? "mt-6" : "mt-4"} max-w-md text-sm text-muted-foreground leading-relaxed`}
+                        className={`${pIndex === 0 ? "mt-6" : "mt-4"} max-w-xl whitespace-pre-line text-md text-muted-foreground leading-relaxed`}
                       >
                         {paragraph}
                       </p>
@@ -384,48 +304,11 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
-      {/* ======================= DISCOVERIES BANNER ======================= */}
-      <section className="relative min-h-[480px] overflow-hidden lg:min-h-[560px]">
-        <div className="absolute inset-0">
-          <img
-            src={DISCOVERIES_IMAGE}
-            alt="Sunrise over a global research campus"
-            className="h-full w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-        </div>
-
-        <div className="relative z-10 mx-auto flex min-h-[480px] max-w-7xl items-center px-4 py-20 lg:min-h-[560px] lg:px-8">
-          <div className="max-w-xl">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-3xl sm:text-4xl font-medium leading-tight text-white md:text-5xl"
-            >
-              Discoveries that shape generations.
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-6 max-w-lg text-sm leading-relaxed text-white/85 md:text-base"
-            >
-              As science continues to evolve, Bencos will remain dedicated to pushing the
-              boundaries of research and innovation. Our aspiration is to become a globally
-              trusted partner that transforms ideas into discoveries and discoveries into
-              meaningful healthcare solutions for future generations.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+      
 
       {/* ======================= CLOSING CTA ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -440,10 +323,9 @@ export default function WhoWeArePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 text-sm text-muted-foreground md:text-base"
+            className="mt-4 whitespace-pre-line text-sm text-muted-foreground md:text-base"
           >
-        At Bencos, we believe scientific innovation should improve lives, strengthen healthcare systems and inspire the next generation of discovery.
-Our journey continues with one purpose—to create a healthier, smarter and more sustainable future through science.
+            {"At Bencos, we believe scientific innovation should improve lives, strengthen healthcare systems and inspire the next generation of discovery.\nOur journey continues with one purpose—to create a healthier, smarter and more sustainable future through science."}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -456,7 +338,7 @@ Our journey continues with one purpose—to create a healthier, smarter and more
               href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-green-700 px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
             >
-              Explore Our Ecosystem
+              Partner With Us 
             </Link>
           </motion.div>
         </div>

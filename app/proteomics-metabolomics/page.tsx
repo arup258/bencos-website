@@ -5,8 +5,8 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 315.png"
-const APPROACH_IMAGE = "/images/image 316.png"
+const HERO_IMAGE = "/images/image 315.webp"
+const APPROACH_IMAGE = "/images/image 316.webp"
 
 // Service cards — image with overlaid title/description.
 const services = [
@@ -54,10 +54,10 @@ const applications = [
 
 // Technology & platforms — image top, title below; grid reflows automatically.
 const technology = [
-  { title: "Mass Spectrometry", image: "/images/image 329.png" },
-  { title: "Liquid Chromatography", image: "/images/image 330.png" },
-  { title: "High-Resolution Molecular Analysis", image: "/images/image 332.png" },
-  { title: "Integrated Multi-Omics Platform", image: "/images/image 331.png" },
+  { title: "Mass Spectrometry", image: "/images/image 329.webp" },
+  { title: "Liquid Chromatography", image: "/images/image 330.webp" },
+  { title: "High-Resolution Molecular Analysis", image: "/images/image 332.webp" },
+  { title: "Integrated Multi-Omics Platform", image: "/images/image 331.webp" },
 ]
 
 // Workflow — numbered steps; grid reflows automatically.
@@ -75,29 +75,29 @@ const whyChoose = [
   {
     title: "Scientific Expertise",
     description:
-      "Senior scientists with deep experience across proteomics, metabolomics, and translational research guide every project.",
-    image: "/images/image 338.png",
+      "Senior scientists with deep experience across proteomics,\nmetabolomics, and translational research guide every project.",
+    image: "/images/image 338.webp",
     imageAlt: "Scientists reviewing mass spectrometry results",
   },
   {
     title: "Advanced Analytical Infrastructure",
     description:
-      "A dedicated mass spectrometry laboratory built around industry-leading LC-MS/MS platforms and rigorous quality standards.",
-    image: "/images/image 339.png",
+      "A dedicated mass spectrometry laboratory built around industry-\nleading LC-MS/MS platforms and rigorous quality standards.",
+    image: "/images/image 339.webp",
     imageAlt: "A modern mass spectrometry laboratory",
   },
   {
     title: "High-Quality Data",
     description:
-      "Validated, reproducible datasets with transparent analytical reports designed for publication and regulatory review.",
-    image: "/images/image 340.png",
+      "Validated, reproducible datasets with transparent analytical\nreports designed for publication and regulatory review.",
+    image: "/images/image 340.webp",
     imageAlt: "Quality control of analytical data on screen",
   },
   {
     title: "Trusted Research Partner",
     description:
-      "Long-term collaboration with academic, biotech, pharmaceutical, and clinical research organizations worldwide.",
-    image: "/images/image 341.png",
+      "Long-term collaboration with academic, biotech, pharmaceutical,\nand clinical research organizations worldwide.",
+    image: "/images/image 341.webp",
     imageAlt: "A research team collaborating in a meeting room",
   },
 ]
@@ -125,7 +125,7 @@ export default function ProteomicsMetabolomicsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium uppercase tracking-[0.15em] text-white"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               Services
             </motion.p>
@@ -140,7 +140,7 @@ export default function ProteomicsMetabolomicsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Understanding Biology Beyond Genes
             </motion.h1>
@@ -149,7 +149,7 @@ export default function ProteomicsMetabolomicsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Explore proteins and metabolites with advanced analytical technologies that reveal biological functions, disease mechanisms, biomarker discovery, and precision medicine insights
             </motion.p>
@@ -198,9 +198,9 @@ export default function ProteomicsMetabolomicsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            Our bioinformatics team combines computational biology, cloud technologies, advanced analytics, and scientific expertise to help researchers unlock the full value of biological data.
+            Our bioinformatics team combines computational biology, cloud technologies, advanced analytics, and scientific expertise to<br/> help researchers unlock the full value of biological data.
           </motion.p>
         </div>
 
@@ -245,9 +245,9 @@ export default function ProteomicsMetabolomicsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            Supporting biomedical research, pharmaceutical innovation, and precision medicine through comprehensive molecular analysis.
+            Supporting biomedical research, pharmaceutical innovation, and precision medicine through comprehensive molecular<br/> analysis.
           </motion.p>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -306,9 +306,9 @@ export default function ProteomicsMetabolomicsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            A comprehensive portfolio of proteomics and metabolomics workflows engineered for accuracy, sensitivity, and biological relevance.
+            A comprehensive portfolio of proteomics and metabolomics workflows engineered for accuracy, sensitivity, and biological<br/> relevance.
           </motion.p>
 
           <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-4">
@@ -363,9 +363,9 @@ export default function ProteomicsMetabolomicsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            Our laboratories utilize globally recognized analytical technologies for accurate, reproducible, and high-quality molecular analysis.
+            Our laboratories utilize globally recognized analytical technologies for accurate, reproducible, and high-quality molecular<br/> analysis.
           </motion.p>
 
           <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
@@ -500,7 +500,7 @@ export default function ProteomicsMetabolomicsPage() {
                     <h3 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
                       {item.title}
                     </h3>
-                    <p className="mt-6 max-w-md text-muted-foreground leading-relaxed">
+                    <p className="mt-6 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>
@@ -513,7 +513,7 @@ export default function ProteomicsMetabolomicsPage() {
 
       {/* ======================= CLOSING CTA ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -528,9 +528,9 @@ export default function ProteomicsMetabolomicsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 text-sm text-muted-foreground md:text-base"
+            className="mt-4 whitespace-pre-line text-sm text-muted-foreground md:text-base"
           >
-            Partner with Bencos to explore proteins, metabolites, and molecular pathways through world-class analytical technologies and scientific expertise.
+            {"Partner with Bencos to explore proteins, metabolites, and molecular pathways through world-class\nanalytical technologies and scientific expertise."}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -5,8 +5,8 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 400.png"
-const APPROACH_IMAGE = "/images/image 401.png"
+const HERO_IMAGE = "/images/image 400.webp"
+const APPROACH_IMAGE = "/images/image 401.webp"
 
 // Service cards — image with overlaid title/description.
 const services = [
@@ -75,29 +75,29 @@ const whyChoose = [
   {
     title: "Scientific Excellence",
     description:
-      "Senior scientists lead every engagement, bringing decades of research and industry experience to complex challenges.",
-    image: "/images/image 420.png",
+      "Senior scientists lead every engagement, bringing decades of\nresearch and industry experience to complex challenges.",
+    image: "/images/image 420.webp",
     imageAlt: "Senior scientific advisors in discussion",
   },
   {
     title: "Global Scientific Perspective",
     description:
-      "A worldwide network of collaborators, institutions and clinical partners informs every recommendation we deliver.",
-    image: "/images/image 421.png",
+      "A worldwide network of collaborators, institutions and clinical\npartners informs every recommendation we deliver.",
+    image: "/images/image 421.webp",
     imageAlt: "A cross-disciplinary scientific team",
   },
   {
     title: "Evidence-Based Decision Making",
     description:
-      "Strategies grounded in peer-reviewed evidence, robust data analysis and reproducible scientific methodology.",
-    image: "/images/image 422.png",
+      "Strategies grounded in peer-reviewed evidence, robust data\nanalysis and reproducible scientific methodology.",
+    image: "/images/image 422.webp",
     imageAlt: "Advisors reviewing research strategy",
   },
   {
     title: "Collaborative Partnership",
     description:
-      "We embed with your teams — from principal investigators to leadership — as long-term scientific partners.",
-    image: "/images/image 423.png",
+      "We embed with your teams — from principal investigators to\nleadership — as long-term scientific partners.",
+    image: "/images/image 423.webp",
     imageAlt: "A team collaborating in a meeting room",
   },
 ]
@@ -125,9 +125,9 @@ export default function ScientificConsultingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium uppercase tracking-[0.15em] text-white"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
-              Services
+              What we do
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
@@ -140,7 +140,7 @@ export default function ScientificConsultingPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Scientific Expertise.
               <br />
@@ -151,7 +151,7 @@ export default function ScientificConsultingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Helping organizations transform scientific ideas into impactful research, innovation, and healthcare solutions through expert consulting, technical excellence, and evidence-based strategies.
             </motion.p>
@@ -200,9 +200,9 @@ export default function ScientificConsultingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
-            Our multidisciplinary consulting team supports research organizations, biotechnology companies, pharmaceutical industries, healthcare institutions, and government agencies with scientific planning, technology evaluation, research strategy, and innovation management.
+            Our multidisciplinary consulting team supports research organizations, biotechnology companies, pharmaceutical industries,<br/> healthcare institutions, and government agencies with scientific planning, technology evaluation, research strategy, and<br/> innovation management.
 
           </motion.p>
         </div>
@@ -248,7 +248,7 @@ export default function ScientificConsultingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-muted-foreground leading-relaxed"
+            className="mt-4 max-w-6xl text-muted-foreground leading-relaxed"
           >
             Six practice areas engineered to move scientific programs from question to evidence to outcome.
           </motion.p>
@@ -269,11 +269,12 @@ export default function ScientificConsultingPage() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6">
-                  <h3 className="text-xl font-semibold text-white md:text-2xl">
+                <div className="absolute inset-x-0 bottom-0 p-6 pb-16">
+                  <h3 className="text-xl
+group-hover:text-[#4ADE76] font-semibold text-white md:text-2xl">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/80">
+                  <p className="mt-2 min-h-[4.25rem] text-sm leading-relaxed text-white/80">
                     {item.description}
                   </p>
                 </div>
@@ -440,7 +441,7 @@ export default function ScientificConsultingPage() {
                     <h3 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
                       {item.title}
                     </h3>
-                    <p className="mt-6 max-w-md text-muted-foreground leading-relaxed">
+                    <p className="mt-6 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>
@@ -453,7 +454,7 @@ export default function ScientificConsultingPage() {
 
       {/* ======================= CLOSING CTA ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -470,7 +471,7 @@ export default function ScientificConsultingPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-4 text-sm text-muted-foreground md:text-base"
           >
-            Partner with Bencos to transform scientific challenges into innovative solutions through trusted consulting, strategic expertise, and collaborative research.
+            Partner with Bencos to transform scientific challenges into innovative solutions<br/> through trusted consulting, strategic expertise, and collaborative research.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

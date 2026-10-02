@@ -5,9 +5,9 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 165.png"
-const HUMAN_AI_IMAGE = "/images/image 166.png"
-const TRANSFORMATION_IMAGE = "/images/image 177.png"
+const HERO_IMAGE = "/images/image 458.webp"
+const HUMAN_AI_IMAGE = "/images/image 166.webp"
+const TRANSFORMATION_IMAGE = "/images/image 177.webp"
 
 // Solution cards — add/edit entries and the grid reflows automatically.
 const solutions = [
@@ -22,31 +22,31 @@ const solutions = [
 // Reasons — alternating rows; even index = image left, odd = image right.
 const reasons = [
   {
-    title: "Human centered service",
+    title: "Human Centered Service",
     description:
       "We start with people. Every engagement is designed around the customers, employees and stakeholders whose experience defines your brand.",
-    image: "/images/image 173.png",
+    image: "/images/image 173.webp",
     imageAlt: "A customer experience team collaborating in an office",
   },
   {
-    title: "AI-powered operations",
+    title: "AI-Powered Operations",
     description:
-      "We embed intelligent automation into the fabric of daily work — freeing teams to focus on judgement, empathy and growth.",
-    image: "/images/image 174.png",
+      "We embed intelligent automation into the fabric of daily work —\nfreeing teams to focus on judgement, empathy and growth.",
+    image: "/images/image 174.webp",
     imageAlt: "An operations center with real-time data dashboards",
   },
   {
     title: "Scalable Solutions",
     description:
       "From regional programs to global rollouts, our delivery model scales with confidence, governance and speed.",
-    image: "/images/image 175.png",
+    image: "/images/image 175.webp",
     imageAlt: "A large modern corporate atrium",
   },
   {
-    title: "Business excellence",
+    title: "Business Excellence",
     description:
       "Measurable outcomes are the standard. We tie every initiative to the performance metrics that matter to leadership.",
-    image: "/images/image 176.png",
+    image: "/images/image 176.webp",
     imageAlt: "Executives reviewing performance dashboards in a boardroom",
   },
 ]
@@ -93,9 +93,9 @@ export default function Bencos360Page() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium text-white md:text-xl"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
-              What we do
+              Who we are 
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
@@ -108,7 +108,7 @@ export default function Bencos360Page() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-5xl lg:whitespace-nowrap font-elegant thin tracking-wide text-white leading-[1.25]"
             >
               Human Intelligence Meets AI
             </motion.h1>
@@ -117,7 +117,7 @@ export default function Bencos360Page() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               Bencos360 helps organizations create exceptional customer experiences by combining human expertise, intelligent automation, AI-driven solutions and modern business operations to deliver measurable business growth.
             </motion.p>
@@ -129,7 +129,7 @@ export default function Bencos360Page() {
               className="mt-10"
             >
               <a
-                href="https://bencos360.com/"
+                href="/bencos360-microsite"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg hover:shadow-green-500/30"
@@ -190,7 +190,7 @@ export default function Bencos360Page() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
           >
-            Our solutions
+            Our Solutions
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -238,7 +238,7 @@ export default function Bencos360Page() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
           >
-            Why organizations choose Bencos360
+            Why Organizations Choose Bencos360
           </motion.h2>
 
           <div className="mt-12 space-y-16 lg:space-y-24">
@@ -277,7 +277,7 @@ export default function Bencos360Page() {
                     <h3 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
                       {reason.title}
                     </h3>
-                    <p className="mt-6 max-w-md text-muted-foreground leading-relaxed">
+                    <p className="mt-6 max-w-lg whitespace-pre-line text-muted-foreground leading-relaxed">
                       {reason.description}
                     </p>
                   </motion.div>
@@ -298,7 +298,7 @@ export default function Bencos360Page() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
           >
-            Driving digital transformation
+            Driving Digital Transformation
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -336,7 +336,7 @@ export default function Bencos360Page() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
           >
-            The future of customer experience
+            The Future of Customer Experience
           </motion.h2>
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -356,7 +356,7 @@ export default function Bencos360Page() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
-                  <h3 className="text-2xl font-semibold text-white">{item.label}</h3>
+                  <h3 className="text-2xl group-hover:text-[#4ADE76] font-semibold text-white">{item.label}</h3>
                   <p className="mt-1 text-sm text-white/80">{item.title}</p>
                 </div>
               </motion.div>
@@ -367,24 +367,24 @@ export default function Bencos360Page() {
 
       {/* ======================= CLOSING CTA ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-2.5xl"
+            className="text-3xl sm:text-4xl md:text-4xl font-medium leading-tight text-foreground"
           >
-             Create better experiences. Build smarter businesses.
+            Create Better Experiences. Build Smarter Businesses.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 text-sm text-muted-foreground md:text-base"
+            className="mt-8 text-sm text-muted-foreground md:text-base"
           >
-            Partner with Bencos360 to transform customer experiences, streamline operations and accelerate digital innovation through intelligent business solutions.
+            Partner with Bencos360 to transform customer experiences, streamline operations<br/> and accelerate digital innovation through intelligent business solutions.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

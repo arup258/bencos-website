@@ -5,51 +5,51 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 // Section images live in /public/images — swap the srcs below to change them.
-const HERO_IMAGE = "/images/image 106.png"
-const INTRO_IMAGE = "/images/image 107.png"
-const CONNECTED_IMAGE = "/images/image 104.png"
-const PURPOSE_IMAGE = "/images/image 98.png"
-const PILLARS_IMAGE = "/images/image 95.png"
-const VISION_IMAGE = "/images/image 104.png"
-const GATC_IMAGE = "/images/image 115.png"
-const IMPACT_IMAGE = "/images/image 116.png"
-const FUTURE_IMAGE = "/images/hero-lab-1.png"
+const HERO_IMAGE = "/images/image 106.webp"
+const INTRO_IMAGE = "/images/image 461.png"
+const CONNECTED_IMAGE = "/images/image 104.webp"
+const PURPOSE_IMAGE = "/images/image 98.webp"
+const PILLARS_IMAGE = "/images/image 95.webp"
+const VISION_IMAGE = "/images/image 104.webp"
+const GATC_IMAGE = "/images/image 115.webp"
+const IMPACT_IMAGE = "/images/image 116.webp"
+const FUTURE_IMAGE = "/images/hero-lab-1.webp"
 
 // Alternating content sections — add/edit entries and the layout flips automatically.
 const ecosystemSections = [
   {
-    heading: ["One connected", "ecosystem"],
+    heading: ["One Connected", "Ecosystem"],
     paragraphs: [
-      "The Bencos ecosystem connects research, healthcare, technology, customer experience, and scientific collaboration to create lasting value for people, organizations, and communities worldwide.",
+      "The Bencos ecosystem connects research, healthcare,\ntechnology, customer experience, and scientific collaboration to\ncreate lasting value for people, organizations, and communities\nworldwide.",
     ],
-    image: "/images/image 108.png",
+    image: "/images/image 108.webp",
     imageAlt: "Bencos scientists collaborating around a shared workstation",
   },
   {
     heading: ["Bencos Research Solutions"],
     paragraphs: [
-      "Bencos Research Solutions is the scientific foundation of the ecosystem, delivering advanced research services across genomics, bioinformatics, multi-omics, artificial intelligence,and scientific consulting.",
-      "By transforming complex biological data into meaningful insights, we empower researchers, biotechnology companies, pharmaceutical organizations, and academic institutions to accelerate scientific discovery.",
+      "Bencos Research Solutions is the scientific foundation of the\necosystem, delivering advanced research services across\ngenomics, bioinformatics, multi-omics, artificial intelligence,\nand scientific consulting.",
+      "By transforming complex biological data into meaningful insights,\nwe empower researchers, biotechnology companies,\npharmaceutical organizations, and academic institutions to\naccelerate scientific discovery.",
     ],
-    image: "/images/image 109.png",
+    image: "/images/image 109.webp",
     imageAlt: "Bencos teams collaborating across research and technology",
   },
   {
-    heading: ["Bencos Health"],
+    heading: ["Bencos Healthcare"],
     paragraphs: [
-      "Bencos Health extends the ecosystem into the clinic — delivering precision medicine, molecular diagnostics, clinical genomics, and digital healthcare services that translate scientific advances into measurable patient outcomes.",
-      "By combining advanced diagnostics with personalized care pathways, we help clinicians and health systems deliver care that is more accurate, more proactive, and more human.",
+      "Bencos Healthcare extends the ecosystem into the clinic — delivering\nprecision medicine, molecular diagnostics, clinical genomics,\nand digital healthcare services that translate scientific\nadvances into measurable patient outcomes.",
+      "By combining advanced diagnostics with personalized care\npathways, we help clinicians and health systems deliver care\nthat is more accurate, more proactive, and more human.",
     ],
-    image: "/images/image 110.png",
+    image: "/images/image 110.webp",
     imageAlt: "Advanced technology and data systems powering the Bencos ecosystem",
   },
   {
     heading: ["Bencos360"],
     paragraphs: [
-      "Bencos Research Solutions is the scientific foundation of the ecosystem, delivering advanced research services across genomics, bioinformatics, multi-omics, artificial intelligence, and scientific consulting.",
-      "By transforming complex biological data into meaningful insights, we empower researchers, biotechnology companies, pharmaceutical organizations, and academic institutions to accelerate scientific discovery.",
+      "Bencos360 empowers businesses with intelligent customer experience, AI-enabled digital operations, and scalable enterprise solutions. ",
+      "By combining human expertise with advanced technology, it helps organizations improve customer engagement, streamline operations, and accelerate sustainable business growth.",
     ],
-    image: "/images/image 111.png",
+    image: "/images/image 111.webp",
     imageAlt: "The global impact of the Bencos connected ecosystem",
   },
 ]
@@ -60,7 +60,7 @@ const platforms = [
     name: "TWINE",
     description:
       "AI-powered genomics platform transforming sequencing data into accurate and clinically actionable intelligence.",
-    image: "/images/image 112.png",
+    image: "/images/image 112.webp",
     href: "https://twine.myneuron.in",
     external: true,
   },
@@ -68,7 +68,7 @@ const platforms = [
     name: "MyNeuron",
     description:
       "Research collaboration and scientific knowledge platform connecting researchers, institutions, and innovation teams.",
-    image: "/images/image 113.png",
+    image: "/images/image 113.webp",
     href: "/myneuron",
     external: false,
   },
@@ -76,8 +76,8 @@ const platforms = [
     name: "BREF",
     description:
       "Scientific knowledge and research intelligence platform designed to support learning, discovery, and evidence-driven decision making.",
-    image: "/images/image 114.png",
-    href: "",
+    image: "/images/image 114.webp",
+    href: "/bref",
     external: false,
   },
 ]
@@ -113,7 +113,7 @@ export default function OurEcosystemPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-lg font-medium text-white md:text-xl"
+              className="text-white text-sm md:text-xl font-light tracking-tight antialiased"
             >
               Who we are
             </motion.p>
@@ -128,9 +128,9 @@ export default function OurEcosystemPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8 text-3xl sm:text-4xl font-medium text-white md:text-4xl"
+              className="mt-8 text-3xl sm:text-4xl md:text-4xl font-elegant thin tracking-wide text-white leading-[1.25]"
             >
-              One Ecosystem.
+              One Ecosystem
               <br />
               Endless Possibilities
             </motion.h1>
@@ -139,7 +139,7 @@ export default function OurEcosystemPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-3 max-w-xl text-base leading-relaxed text-white/85"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-white"
             >
               The Bencos ecosystem unites research, healthcare, technology, and collaboration to create meaningful global impact.
             </motion.p>
@@ -149,7 +149,7 @@ export default function OurEcosystemPage() {
 
       {/* ======================= INTRO STATEMENT ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -157,16 +157,16 @@ export default function OurEcosystemPage() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl"
           >
-            One Vision. Multiple Innovations.
+            One Vision<br/> Multiple Innovations
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-muted-foreground leading-relaxed"
+            className="mx-auto mt-6 max-w-5xl whitespace-pre-line text-muted-foreground leading-relaxed"
           >
-            Every organization within the Bencos ecosystem shares one common purpose—to accelerate scientific discovery, improve healthcare, develop intelligent technologies, and create meaningful value through collaboration
+            {"Every organization within the Bencos ecosystem shares one common purpose—to accelerate scientific discovery,\nimprove healthcare, develop intelligent technologies, and create meaningful value through collaboration"}
           </motion.p>
         </div>
 
@@ -226,7 +226,7 @@ export default function OurEcosystemPage() {
                   {section.paragraphs.map((para, pIndex) => (
                     <p
                       key={pIndex}
-                      className={`${pIndex === 0 ? "mt-8" : "mt-4"} max-w-md text-muted-foreground leading-relaxed`}
+                      className={`${pIndex === 0 ? "mt-8" : "mt-4"} max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed`}
                     >
                       {para}
                     </p>
@@ -241,15 +241,15 @@ export default function OurEcosystemPage() {
       {/* ======================= INTELLIGENT PLATFORMS ======================= */}
       <section className="bg-background py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-7xl text-center">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl"
+              className="text-3xl sm:text-3xl font-medium leading-tight text-foreground md:text-5xl"
             >
-              Intelligent platforms, built for discovery.
+              Intelligent Platforms, Built for Discovery.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -313,7 +313,7 @@ export default function OurEcosystemPage() {
       {/* ======================= COLLABORATION / GATC ======================= */}
       <section className="bg-background py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-7xl text-center">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -321,16 +321,17 @@ export default function OurEcosystemPage() {
               transition={{ duration: 0.6 }}
               className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl"
             >
-              Innovation grows through collaboration.
+              Innovation Grows Through Collaboration
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-6 text-muted-foreground leading-relaxed"
+              className="mx-auto mt-6 text-muted-foreground leading-relaxed"
             >
-              The Bencos ecosystem supports global scientific communities through conferences, workshops, knowledge exchange, and collaborative research initiatives.
+              The Bencos ecosystem supports global scientific and business communities through conferences, workshops, knowledge exchange,<br/> collaborative research, and enterprise partnership programs that span genomics, life sciences, and digital transformation.
+
             </motion.p>
           </div>
 
@@ -357,12 +358,14 @@ export default function OurEcosystemPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <h2 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
-                GATC — Genomics Analysis &amp; Technology Conference
+              <h2 className="text-3xl sm:text-5xl font-medium leading-tight text-foreground md:text-4xl">
+                Genomics Advancements
+                <br />
+                Through Convergence
               </h2>
 
-              <p className="mt-8 max-w-md text-muted-foreground leading-relaxed">
-                A flagship scientific conference connecting researchers, clinicians, industry leaders, and innovators from around the world.
+              <p className="mt-8 max-w-xl whitespace-pre-line text-muted-foreground leading-relaxed">
+                {"A flagship scientific conference connecting researchers, clinicians, industry leaders, innovators, and enterprise decision-makers from around the world to advance genomics, multi-omics, precision medicine, and the future of healthcare and life-sciences business."}
               </p>
             </motion.div>
           </div>
@@ -371,7 +374,7 @@ export default function OurEcosystemPage() {
 
       {/* ======================= GREATER IMPACT ======================= */}
       <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -379,16 +382,16 @@ export default function OurEcosystemPage() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl"
           >
-            Together we create greater impact
+            Together We Create Greater Impact
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-muted-foreground leading-relaxed"
+            className="mx-auto mt-6 max-w-6xl whitespace-pre-line text-muted-foreground leading-relaxed"
           >
-        By connecting research, healthcare, technology, customer experience, and scientific collaboration, the Bencos ecosystem creates lasting value for people, organizations, and communities around the world.
+            {"By connecting research, healthcare, technology, customer experience, and scientific collaboration, the Bencos ecosystem creates\nlasting value for people, organizations, and communities around the world."}
           </motion.p>
         </div>
 
@@ -424,16 +427,16 @@ export default function OurEcosystemPage() {
             transition={{ duration: 0.6 }}
             className="text-2xl font-semibold text-foreground md:text-3xl text-balance"
           >
-            Building the future together.
+            Building the Future Together
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 text-sm text-muted-foreground md:text-base"
+            className="mt-4 whitespace-pre-line text-sm text-muted-foreground md:text-base"
           >
-            Every breakthrough begins with collaboration. Explore how the Bencos ecosystem is shaping the future of life sciences, healthcare, technology, and global innovation.
+            {"Every breakthrough begins with collaboration. Explore how the Bencos ecosystem\nis shaping the future of life sciences, healthcare, technology, and global\ninnovation."}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -454,3 +457,5 @@ export default function OurEcosystemPage() {
     </>
   )
 }
+
+

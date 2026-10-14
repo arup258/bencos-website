@@ -1,8 +1,8 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronRight } from "lucide-react"
+import { TeamCarousel, type TeamStory } from "@/components/team-carousel"
 
 // Section images live in /public/images — swap the srcs below to change them.
 const HERO_IMAGE = "/images/image 637.jpeg"
@@ -77,18 +77,7 @@ const team: TeamMember[] = [
   },
 ]
 
-// "Diverse and skilled team" carousel — add people here (photo, name, role, expertise).
-// `position` sets which part of the photo stays in frame (CSS object-position); default keeps the face near the top.
-// `linkedin` is optional — the green "in" badge next to the name only shows when it is set.
-type TeamStory = {
-  name: string
-  role: "Collaborator" | "Advisor"
-  expertise: string
-  image: string
-  linkedin?: string
-  position?: string
-}
-
+// Carousel people — add photo, name, role and expertise here (see components/team-carousel.tsx for fields).
 const teamStories: TeamStory[] = [
   // Collaborators
   {
@@ -123,7 +112,7 @@ const teamStories: TeamStory[] = [
   },
   {
     name: "Satyendra Tripathi",
-    linkedin: "https://www.linkedin.com/in/satyendra-tripathi-09311a20/",
+    linkedin: "https://www.linkedin.com/in/satyendra-tripathi-4a929728/",
     role: "Collaborator",
     expertise: "Oncology — predicting tumor markers with proteomics and metabolomics",
     image: "/images/Satyendra Tripathi.jpeg",
@@ -145,10 +134,11 @@ const teamStories: TeamStory[] = [
     image: "/images/Arindam maitra.jpeg",
   },
   {
-    name: "Bratati Kahali",
+    name: "Sanjeev Galande",
+    linkedin: "https://www.linkedin.com/in/sanjeev-galande-778349128/",
     role: "Advisor",
-    expertise: "Computational genomics, massive joint genotyping and biobanking",
-    image: "/images/Bratati kahali.jpeg",
+    expertise: "Indian cell biologist, epigeneticist, academic",
+    image: "/images/sanjeev.png",
   },
   {
     name: " K. Thangraj",
@@ -163,10 +153,10 @@ const teamStories: TeamStory[] = [
     image: "/images/Bk thelma.jpeg",
   },
   {
-    name: "Ravi Kanan",
+    name: "Anurag Agrawal",
     role: "Advisor",
-    expertise: "Surgical oncology, public health and healthcare administration",
-    image: "/images/Dr. Ravi Kanan.jpeg",
+    expertise: "Indian pulmonologist, medical researcher,",
+    image: "/images/anurag.jpeg",
   },
   {
     name: "Rashmi Shukla",
@@ -174,169 +164,45 @@ const teamStories: TeamStory[] = [
     expertise: "Molecular genetics and clinical NGS",
     image: "/images/Reshmi Shukla.jpeg",
   },
+
+  {
+    name: "Vainav Patel",
+    role: "Advisor",
+    expertise: "Scientist ‘E’ & Head, Dept. of Biochemistry & Virology",
+    image: "/images/Vainav.jpg",
+  },
+  // Scientists — add `image: "/images/<file>"` once photos are available.
+  { name: "Dr. Sujata Basu, PhD",
+    role: "Scientist",
+    expertise:"",
+    image:"",
+   },
+  {
+    name: "Dr. Sayantan Laha, PhD",
+    linkedin: "https://www.linkedin.com/in/sayantanlaha?originalSubdomain=in",
+    role: "Scientist",
+    expertise: "Bioinformatics Analyst",
+    image: "/images/sayantan.jpeg",
+  },
+  {
+    name: "Dr. Sumit Chatterjee, PhD",
+    linkedin: "https://www.linkedin.com/in/sumit-chatterjee-20307b124?originalSubdomain=in",
+    role: "Scientist",
+    expertise: "Field Application Scientist, Bencos Healthcare Solutions M.Sc in Microbiology",
+    image: "/images/sumit.jpeg",
+  },
+  {
+    name: "Dr. Romit Mitra, PhD",
+    linkedin: "https://www.linkedin.com/in/dr-romit-mitra-ph-d-0978a4a3/",
+    role: "Scientist",
+    expertise: "Senior Scientist, BREF | Ph.D. (Technology), Indian Institute of Technology Kharagpur",
+    image: "/images/romit.jpeg",
+  },
 ]
 
-function TeamCarousel() {
-  const [active, setActive] = useState(0)
-  const [paused, setPaused] = useState(false)
-  const touchX = useRef<number | null>(null)
-  const count = teamStories.length
-  const go = (dir: number) => setActive((i) => (i + dir + count) % count)
-
-  // Gentle auto-advance; pauses while hovered/focused or when the user prefers reduced motion.
-  useEffect(() => {
-    if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
-    const id = setInterval(() => setActive((i) => (i + 1) % count), 4500)
-    return () => clearInterval(id)
-  }, [paused, count])
-
-  const person = teamStories[active]
-
-  return (
-    <section
-      className="overflow-hidden bg-background py-16 lg:py-20"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
-      onBlur={() => setPaused(false)}
-    >
-      <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl font-medium leading-tight text-foreground sm:text-4xl"
-        >
-          Diverse Minds, Shared Vision
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mx-auto mt-5 max-w-xl leading-relaxed text-muted-foreground"
-        >
-          Our progress is driven by the collective contributions of our people, past and present. Discover the stories and experiences that have shaped our journey.
-        </motion.p>
-      </div>
-
-      {/* Track: the active card sits in the centre, neighbours fade out to the sides. */}
-      <div
-        className="relative mt-12 h-[300px] sm:h-[340px]"
-        role="region"
-        aria-roledescription="carousel"
-        aria-label="Team members"
-        onKeyDown={(e) => {
-          if (e.key === "ArrowLeft") go(-1)
-          if (e.key === "ArrowRight") go(1)
-        }}
-        onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
-        onTouchEnd={(e) => {
-          if (touchX.current === null) return
-          const dx = e.changedTouches[0].clientX - touchX.current
-          if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1)
-          touchX.current = null
-        }}
-      >
-        {teamStories.map((m, i) => {
-          // Shortest signed distance from the active card, so the row wraps around.
-          let offset = i - active
-          if (offset > count / 2) offset -= count
-          if (offset < -count / 2) offset += count
-          const isActive = offset === 0
-          const hidden = Math.abs(offset) > 2
-          return (
-            <button
-              key={m.name}
-              type="button"
-              onClick={() => setActive(i)}
-              aria-label={`Show ${m.name}`}
-              aria-current={isActive}
-              tabIndex={hidden ? -1 : 0}
-              className="absolute left-1/2 top-0 h-full w-[220px] overflow-hidden rounded-sm bg-neutral-100 transition-all duration-500 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 sm:w-[260px]"
-              style={{
-                transform: `translateX(calc(-50% + ${offset} * (100% + 12px))) scale(${isActive ? 1 : 0.92})`,
-                opacity: hidden ? 0 : isActive ? 1 : 0.45,
-                filter: isActive ? "none" : "grayscale(1)",
-                zIndex: 10 - Math.abs(offset),
-                pointerEvents: hidden ? "none" : "auto",
-              }}
-            >
-              <img
-                src={m.image}
-                alt={m.name}
-                className="h-full w-full object-cover"
-                style={{ objectPosition: m.position ?? "50% 15%" }}
-                loading="lazy"
-                draggable={false}
-              />
-            </button>
-          )
-        })}
-      </div>
-
-      {/* Name + controls */}
-      <div className="mx-auto mt-8 flex max-w-xl items-start justify-between gap-4 px-4">
-        <button
-          type="button"
-          onClick={() => go(-1)}
-          aria-label="Previous team member"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[#5fb82e] text-[#3a8a1e] transition-colors hover:bg-[#5fb82e] hover:text-white"
-        >
-          <ChevronLeft className="h-5 w-5" />
-        </button>
-        <div className="min-h-[104px] min-w-0 flex-1 text-center sm:min-h-[92px]" aria-live="polite">
-          <span
-            className={`inline-block rounded-full px-3 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${
-              person.role === "Advisor" ? "bg-[#e9f5e1] text-[#3a8a1e]" : "bg-sky-50 text-sky-700"
-            }`}
-          >
-            {person.role}
-          </span>
-          <div className="mt-2 flex items-center justify-center gap-2">
-            <p className="text-lg font-semibold text-foreground">{person.name}</p>
-            {person.linkedin && (
-              <a
-                href={person.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${person.name} on LinkedIn`}
-                className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#5fb82e] text-[12px] font-bold leading-none text-white transition-transform hover:scale-110"
-              >
-                <span className="-mt-px">in</span>
-              </a>
-            )}
-          </div>
-          <p className="mx-auto mt-1 max-w-sm text-sm font-light leading-relaxed text-muted-foreground">
-            {person.expertise}
-          </p>
-        </div>
-        <button
-          type="button"
-          onClick={() => go(1)}
-          aria-label="Next team member"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[#5fb82e] text-[#3a8a1e] transition-colors hover:bg-[#5fb82e] hover:text-white"
-        >
-          <ChevronRight className="h-5 w-5" />
-        </button>
-      </div>
-
-      {/* Dots */}
-      <div className="mt-5 flex justify-center gap-2">
-        {teamStories.map((m, i) => (
-          <button
-            key={m.name}
-            type="button"
-            onClick={() => setActive(i)}
-            aria-label={`Go to ${m.name}`}
-            className={`h-2 rounded-full transition-all ${i === active ? "w-6 bg-[#5fb82e]" : "w-2 bg-neutral-300 hover:bg-neutral-400"}`}
-          />
-        ))}
-      </div>
-    </section>
-  )
-}
+const advisors = teamStories.filter((m) => m.role === "Advisor")
+const collaborators = teamStories.filter((m) => m.role === "Collaborator")
+const scientists = teamStories.filter((m) => m.role === "Scientist")
 
 
 export default function LeadershipPage() {
@@ -503,8 +369,29 @@ export default function LeadershipPage() {
         </div>
       </section>
 
+      {/* ======================= OUR ADVISORS (CAROUSEL) ======================= */}
+      <TeamCarousel
+        people={advisors}
+        title="Our Advisors"
+        description="Distinguished scientists and clinicians who guide our research direction with deep expertise in genomics, oncology, and healthcare."
+        label="Advisors"
+      />
+
       {/* ======================= DIVERSE & SKILLED TEAM (CAROUSEL) ======================= */}
-      <TeamCarousel />
+      <TeamCarousel
+        people={collaborators}
+        title="Diverse Minds, Shared Vision"
+        description="Our progress is driven by the collective contributions of our people, past and present. Discover the stories and experiences that have shaped our journey."
+        label="Collaborators"
+      />
+
+      {/* ======================= OUR SCIENTISTS (CAROUSEL) ======================= */}
+      <TeamCarousel
+        people={scientists}
+        title="Our Scientists"
+        description="Our in-house scientists turn complex data into meaningful discoveries, driving research across genomics, bioinformatics, and life sciences."
+        label="Scientists"
+      />
 
       {/* ======================= BUILDING THE FUTURE TOGETHER ======================= */}
       <section className="bg-background py-16">

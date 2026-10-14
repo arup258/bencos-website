@@ -209,7 +209,7 @@ function TimelineItem({
   isEven: boolean
 }) {
   return (
-    <div className="group relative flex w-full items-center justify-center py-10 md:py-32">
+    <div className="group relative flex w-full items-center justify-center py-8 md:py-16">
       {/* Central node / dot */}
       <motion.div
         // Start small (not 0) so the in-view check still sees the dot.
@@ -217,7 +217,7 @@ function TimelineItem({
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute left-6 top-[2.95rem] z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-white bg-green-600 shadow-[0_0_0_1px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:scale-125 group-hover:shadow-[0_0_18px_rgba(22,163,74,0.45)] md:left-1/2 md:top-auto"
+        className="absolute left-6 top-[2.45rem] z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-white bg-green-600 shadow-[0_0_0_1px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:scale-125 group-hover:shadow-[0_0_18px_rgba(22,163,74,0.45)] md:left-1/2 md:top-auto"
       />
 
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-6 pl-14 pr-5 md:grid-cols-2 md:gap-24 md:px-6 lg:gap-32 lg:px-8">
@@ -356,14 +356,14 @@ export default function OurHistoryPage() {
 
       {/* ============================ TIMELINE ============================ */}
       <section id="timeline" className="bg-background text-foreground">
-        <div className="mx-auto max-w-3xl px-6 pb-4 pt-16 text-center md:pb-8 md:pt-24 lg:pt-32">
+        <div className="mx-auto max-w-3xl px-6 pb-4 pt-16 text-center md:pb-6 lg:pt-20">
           
           <h2 className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-5xl">
             Our History
           </h2>
         </div>
 
-        <div ref={containerRef} className="relative w-full pb-12 md:pb-24">
+        <div ref={containerRef} className="relative w-full pb-8 md:pb-12">
           {/* Background static line */}
           <div className="absolute bottom-0 left-6 top-0 w-px -translate-x-1/2 bg-border md:left-1/2" />
           {/* Animated progress line */}

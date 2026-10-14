@@ -2,7 +2,8 @@
 
 import { useRef } from "react"
 import { motion } from "framer-motion"
-import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react"
+import { ArrowLeft, ArrowRight } from "lucide-react"
+import { TeamCarousel, type TeamStory } from "@/components/team-carousel"
 
 // Section images live in /public/images — swap the srcs below to change them.
 const HERO_IMAGE = "/images/image 181.webp"
@@ -118,27 +119,94 @@ const whyBref = [
   },
 ]
 
-// Leadership & Advisory Board — add each person's LinkedIn profile URL in `linkedin`.
-// Until one is set, the badge and "More about …" link open the company LinkedIn page.
-const COMPANY_LINKEDIN = "https://www.linkedin.com/company/bencoshealth/"
-
-const boardMembers = [
+// Leadership & Advisory Board carousel — add photo (`image`), `expertise` and `linkedin` as they become available.
+// People without a photo show their initials. Fields are described in components/team-carousel.tsx.
+const boardMembers: TeamStory[] = [
   {
     name: "Arnab Kapat",
-    title: "Executive Director",
-    description:
+    role: "Trustee",
+    expertise:
       "Brings extensive academic and industry experience to guide strategic direction, research excellence, and organizational development.",
     image: "/images/image 454.png",
     linkedin: "https://www.linkedin.com/in/arnab-kapat-ph-d-49b6b44/",
   },
+  // Trustees
   {
     name: "Rita Mukhopadhyay",
-    title: "Trustee",
-    description:
+    role: "Trustee",
+    expertise:
       "A dedicated trustee with deep commitment to advancing research, education, and healthcare for meaningful societal impact",
     image: "/images/bref-rita.webp",
     linkedin: "https://www.linkedin.com/in/rita-mukhopadhyaya-26707557/",
   },
+  { name: "Shantanu Dasgupta", 
+    role: "Trustee",
+    expertise: "Founder & CEO, BioOmE Life Solutions Pvt Ltd, Co-founder & India Regional  Director,  Global Biofutures, Trustee, Bencos Research & Education  Foundation ",
+    image: "/images/santanu.jpeg",
+   },
+  // Ethics Board
+  // { name: "Moinak Banerjee", 
+  //   role: "Ethics Board",
+  //   expertise: "Rajiv Gandhi Center for Biotechnology",
+  //   image: "/images/Moinak.png",
+  // },
+  // {
+  //   name: "Vainav Patel",
+  //   role: "Ethics Board",
+  //   expertise: "Scientist ‘E’ & Head, Dept. of Biochemistry & Virology",
+  //   image: "/images/Vainav.jpg",
+  // },
+  // Scientific Board
+  {
+    name: "Pradip Nair",
+    role: "Scientific Board",
+    expertise: "Driving biotech advancements via novel biologics",
+    image: "/images/pradip.png",
+  },
+  {
+    name: "Satyendra Tripathi",
+    role: "Scientific Board",
+    expertise: "Oncology — predicting tumor markers with proteomics and metabolomics",
+    image: "/images/Satyendra Tripathi.jpeg",
+    linkedin: "https://www.linkedin.com/in/satyendra-tripathi-4a929728/",
+    position: "50% 5%",
+  },
+  {
+    name: "Prashant Kumar",
+    role: "Scientific Board",
+    expertise: "Chief Scientific Officer at Datar Cancer Genetics and Adjunct Professor at Indian Institute of Technology, Kanpur",
+    image: "/images/prasant kumar.jpeg",
+  },
+  {
+    name: "Mohammad Farhan",
+    role: "Scientific Board",
+    expertise: "Associate Professor at the College of Health and Life Sciences at Hamad Bin Khalifa University",
+    image: "/images/mohammad.png",
+  },
+  {
+    name: "Prof. B.K. Thelma",
+    role: "Scientific Board",
+    expertise: "Medical genomics, complex disease genetics and pharmacogenetics",
+    image: "/images/Bk thelma.jpeg",
+  },
+  {
+    name: "Rashmi Shukla",
+    role: "Scientific Board",
+    expertise: "Molecular genetics and clinical NGS",
+    image: "/images/Reshmi Shukla.jpeg",
+  },
+  // Clinical Board
+  { name: "Vijayalakshmi R",
+    role: "Clinical Board",
+    expertise: " Associate Professor in the Department of Preventive Oncology, heading the research divisionz",
+    image: "/images/Vijayalakshmi.png",
+  },
+
+  { name: "Ravi Kannan",
+    role: "Clinical Board", 
+    expertise: "Indian surgical oncologist, based in Assam",
+    image: "/images/Dr. Ravi Kanan.jpeg"
+   },
 ]
 
 export default function BrefPage() {
@@ -266,62 +334,12 @@ export default function BrefPage() {
       </section>
 
       {/* ======================= LEADERSHIP & ADVISORY BOARD ======================= */}
-      <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl font-medium leading-tight text-foreground md:text-4xl"
-          >
-            Leadership &amp; Advisory Board
-          </motion.h2>
-
-          <div className="mt-12 grid grid-cols-1 gap-x-12 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-            {boardMembers.map((member, index) => {
-              const linkedin = member.linkedin || COMPANY_LINKEDIN
-              return (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex flex-col"
-                >
-                  <div className="relative aspect-[200/214] w-full max-w-[340px] overflow-hidden rounded-sm bg-neutral-200">
-                    <img src={member.image} alt={member.name} className="h-full w-full object-cover object-top" />
-                    <a
-                      href={linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${member.name} on LinkedIn`}
-                      className="absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#5fb82e] text-[15px] font-bold leading-none tracking-tight text-white shadow-sm transition-transform hover:scale-110"
-                    >
-                      <span className="-mt-px">in</span>
-                    </a>
-                  </div>
-                  <h3 className="mt-5 text-xl font-normal text-foreground md:text-[22px]">{member.name}</h3>
-                  <p className="mt-1 text-sm text-foreground">{member.title}</p>
-                  <p className="mt-4 max-w-[340px] text-sm font-light leading-relaxed text-muted-foreground">
-                    {member.description}
-                  </p>
-                  <a
-                    href={linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group mt-5 inline-flex w-fit items-center gap-3 text-sm font-semibold text-foreground transition-colors hover:text-green-700"
-                  >
-                    More about {member.name.split(" ")[0]}
-                    <ChevronRight className="h-4 w-4 text-green-600 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+      <TeamCarousel
+        people={boardMembers}
+        title="Trusted and Advesary board"
+        description="Our trustees, ethics board and clinical board guide BREF's research, education and programs with integrity and scientific excellence."
+        label="Leadership and advisory board"
+      />
 
       {/* ======================= RESEARCH FOCUS AREAS (GRID) ======================= */}
       <section className="bg-background py-16 lg:py-20">

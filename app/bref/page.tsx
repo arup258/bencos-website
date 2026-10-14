@@ -132,7 +132,7 @@ const boardMembers: TeamStory[] = [
   },
   // Trustees
   {
-    name: "Rita Mukhopadhyay",
+    name: "Rita Mukhopadhyaya",
     role: "Trustee",
     expertise:
       "A dedicated trustee with deep commitment to advancing research, education, and healthcare for meaningful societal impact",
@@ -184,7 +184,7 @@ const boardMembers: TeamStory[] = [
     image: "/images/mohammad.png",
   },
   {
-    name: "Prof. B.K. Thelma",
+    name: "B.K. Thelma",
     role: "Scientific Board",
     expertise: "Medical genomics, complex disease genetics and pharmacogenetics",
     image: "/images/Bk thelma.jpeg",
@@ -336,7 +336,7 @@ export default function BrefPage() {
       {/* ======================= LEADERSHIP & ADVISORY BOARD ======================= */}
       <TeamCarousel
         people={boardMembers}
-        title="Trusted and Advesary board"
+        title="Trusted Advisory board"
         description="Our trustees, ethics board and clinical board guide BREF's research, education and programs with integrity and scientific excellence."
         label="Leadership and advisory board"
       />

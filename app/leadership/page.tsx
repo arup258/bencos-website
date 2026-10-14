@@ -198,6 +198,14 @@ const teamStories: TeamStory[] = [
     expertise: "Senior Scientist, BREF | Ph.D. (Technology), Indian Institute of Technology Kharagpur",
     image: "/images/romit.jpeg",
   },
+
+  {
+    name: "Delna Irani, PhD",
+    linkedin: "https://www.linkedin.com/in/delna-irani-ph-d-431b21238/",
+    role: "Scientist",
+    expertise: "Scientist I, Human and Clinical Biology Incharge at Bencos Research Solutions and Bencos Healthcare Solutions",
+    image: "/images/delna.jpeg",
+  },
 ]
 
 const advisors = teamStories.filter((m) => m.role === "Advisor")
